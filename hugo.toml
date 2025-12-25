@@ -1,0 +1,76 @@
+baseURL = "https://example.org/"
+languageCode = "vi-vn"
+title = "VÕ PHÚC NGUYÊN | Portfolio"
+theme = "PaperMod"
+publishDir = "docs"
+
+[params]
+    defaultTheme = "light" # Để light cho đồng bộ với giao diện Luxury mày đang làm
+    ShowReadingTime = true
+    ShowShareButtons = false
+    ShowPostNavLinks = true
+    ShowBreadCrumbs = true
+    ShowCodeCopyButtons = true
+    ShowToc = true 
+    author = "Lê Quốc Trọng"
+    description = "Portfolio và Blog chia sẻ kiến thức Lập trình mạng, Java Backend."
+
+    # --- CẤU HÌNH PROFILE ---
+    # Lưu ý: Vì mày đang dùng file index.html tùy biến (Build Quietly), 
+    # cái profileMode này sẽ bị đè bởi code của mày, nhưng cứ để đây cho chuẩn.
+    [params.profileMode]
+        enabled = true
+        title = "Hi, I'm Lê Quốc Trọng 👋"
+        subtitle = "Java Backend Developer | Network Engineer"
+        imageUrl = "anhdaidien.jpg" 
+        imageWidth = 150
+        imageHeight = 150
+
+# --- MENU ĐIỀU HƯỚNG ---
+[menu]
+    [[menu.main]]
+        identifier = "home"
+        name = "Trang chủ"
+        url = "/"
+        weight = 10
+
+    [[menu.main]]
+        identifier = "about"
+        name = "Giới thiệu"
+        url = "/about/"
+        weight = 20
+
+    [[menu.main]]
+        identifier = "blog"
+        name = "Blog"
+        url = "/posts/"
+        weight = 30
+
+    [[menu.main]]
+        identifier = "contact"
+        name = "Liên hệ"
+        url = "contact"
+        weight = 40
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true # Cho phép dùng HTML trong file Markdown bài viết
+
+# --- FIX LỖI MẤT CSS TRÊN GITHUB PAGES ---
+canonifyURLs = true
+relativeURLs = true
+
+# --- FIX LỖI INTEGRITY ATTRIBUTE ---
+[build]
+  writeStats = false
+  noJSConfigInAssets = true
+
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  minifyOutput = false

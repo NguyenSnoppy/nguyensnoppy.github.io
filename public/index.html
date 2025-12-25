@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.152.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VÕ PHÚC NGUYÊN | Portfolio - VÕ PHÚC NGUYÊN | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header class="luxury-header">
+        <nav class="luxury-nav">
+            <div class="luxury-logo">
+                <a href="http://localhost:1313/">VÕ PHÚC NGUYÊN</a>
+            </div>
+            <ul class="luxury-menu">
+                <li>
+                    <a href="http://localhost:1313/" 
+                       class="active">TRANG CHỦ</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/about" 
+                       class="">GIỚI THIỆU</a>
+                </li>
+
+                <li>
+                    <a href="http://localhost:1313/posts" 
+                       class="">BLOG</a>
+                </li>
+
+                <li>
+                    <a href="http://localhost:1313/contact" 
+                       class="">LIÊN HỆ</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<div class="full-screen-wrapper">
+    <div class="split-container">
+        
+        <div class="text-side">
+            <div class="content-box">
+                
+                <h1 class="main-title">
+                    <div class="line-wrapper"><span class="reveal-item" style="--delay: 0.2s">BUILD</span></div>
+                    <div class="line-wrapper"><span class="reveal-item" style="--delay: 0.3s">QUIETLY.</span></div>
+                    <div class="line-wrapper"><span class="reveal-item outlined" style="--delay: 0.4s">SHIP</span></div>
+                    <div class="line-wrapper"><span class="reveal-item outlined" style="--delay: 0.5s">CONFIDEN</span></div>
+                    <div class="line-wrapper"><span class="reveal-item outlined" style="--delay: 0.6s">TLY.</span></div>
+                </h1>
+                <div class="description-block reveal-item" style="--delay: 0.8s">
+                    <h3 class="job-title">Java&JavaScript</h3>
+                    <p class="bio">
+                        Sinh viên Công Nghệ Thông Tin tại <strong>HUTECH</strong>.<br>
+                        Tôi xây dựng hệ thống vững chắc từ bên trong và kết nối thế giới qua những dòng code.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-side">
+            <div class="image-inner reveal-image">
+                <img src="http://localhost:1313/images/avatar.jpg" alt="Võ Phúc Nguyên">
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<style>
+     
+     
+    footer, .footer, .nav, .logo-switches, #top-link { display: none !important; }
+    
+     
+    body, html { 
+        background: #fff !important; 
+        margin: 0; 
+        padding: 0; 
+        overflow: hidden !important;  
+    }
+
+     
+    .full-screen-wrapper { width: 100vw; height: 100vh; background: #fff; }
+    .split-container { display: flex; height: 100%; width: 100%; }
+    
+     
+    .text-side { 
+        flex: 4.5; 
+        display: flex; 
+        justify-content: flex-end; 
+        align-items: center; 
+        padding-right: 80px; 
+        background: #fff;
+    }
+    .content-box { max-width: 550px; width: 100%; }
+
+     
+    .main-title { 
+        font-family: 'Montserrat', sans-serif !important; 
+        font-size: 85px; 
+        font-weight: 900; 
+        line-height: 0.82; 
+        margin: 0 0 40px 0; 
+        text-transform: uppercase; 
+        letter-spacing: -6px; 
+        color: #1a1a1a;
+    }
+    .line-wrapper { overflow: hidden; } 
+    .outlined { color: transparent !important; -webkit-text-stroke: 2px #1a1a1a; display: inline-block; }
+
+     
+    .image-side { 
+        flex: 5.5; 
+        background: #f9f9f9; 
+        overflow: hidden; 
+    }
+    .image-side img { 
+        width: 70%; 
+        height: 50%; 
+        object-fit: cover; 
+        object-position: center 15%; 
+        display: block; 
+    }
+
+     
+    .top-tag { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: #bbb; letter-spacing: 5px; margin-bottom: 20px; }
+    .description-block { border-left: 5px solid #1a1a1a; padding-left: 25px; margin-top: 35px; }
+    .job-title { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 900; color: #000; }
+    .bio { font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 1.6; color: #666; max-width: 400px; }
+
+     
+    .reveal-item { 
+        display: inline-block; opacity: 0; transform: translateY(100%);
+        animation: revealUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        animation-delay: var(--delay);
+    }
+    @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
+    
+    .reveal-image { opacity: 0; animation: fadeIn 1.5s ease forwards; animation-delay: 0.4s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+     
+    @media (max-width: 900px) {
+        body, html { overflow: auto !important; }  
+        .split-container { flex-direction: column-reverse; }
+        .text-side { padding: 60px 20px; justify-content: center; flex: none; }
+        .image-side { height: 50vh; width: 100%; flex: none; }
+        .image-side img { width: 100%; height: 100%; object-position: center top; }
+        .main-title { font-size: 50px; }
+    }
+</style>
+
+    </main>
+
+</body>
+</html>

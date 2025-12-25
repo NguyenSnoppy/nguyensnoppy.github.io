@@ -1,0 +1,77 @@
+{{ define "main" }}
+<div class="full-screen-wrapper">
+    <div class="split-container">
+        <div class="text-side">
+            <div class="content-box">
+                <p class="top-tag reveal-item" style="--delay: 0.1s">GET IN TOUCH</p>
+                <h1 class="main-title">
+                    <div class="line-wrapper"><span class="reveal-item" style="--delay: 0.2s">CONTACT</span></div>
+                    <div class="line-wrapper"><span class="reveal-item outlined" style="--delay: 0.3s">ME.</span></div>
+                </h1>
+
+                <div class="contact-methods reveal-item" style="--delay: 0.5s">
+                    <p class="method-text">📧 qctrong136@gmail.com</p>
+                    <p class="method-text">📞 +84 36 773 8269</p>
+                </div>
+
+                <div class="contact-form-container reveal-item" style="--delay: 0.7s">
+                    <form action="https://formspree.io/f/xvzpylgw" method="POST" class="luxury-form">
+                        <input type="text" name="name" placeholder="TÊN CỦA BẠN *" required>
+                        <input type="email" name="email" placeholder="EMAIL *" required>
+                        <textarea name="message" rows="3" placeholder="NỘI DUNG TIN NHẮN *" required></textarea>
+                        <button type="submit" class="send-btn">GỬI TIN NHẮN</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-side">
+            <div class="image-inner reveal-image">
+                <img src="{{ "anhdaidien.jpg" | absURL }}" alt="Lê Quốc Trọng">
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* CSS Riêng cho trang Contact (đã bỏ Header style) */
+    footer, .footer, .nav, .header, .logo-switches, #top-link { display: none !important; }
+    body, html { background: #fff !important; margin: 0; padding: 0; overflow: hidden; }
+
+    .full-screen-wrapper { width: 100vw; height: 100vh; background: #fff; }
+    .split-container { display: flex; height: 100%; width: 100%; }
+    .text-side { flex: 4.5; display: flex; justify-content: flex-end; align-items: center; padding-right: 80px; background: #fff; }
+    .content-box { max-width: 500px; width: 100%; }
+    .main-title { font-family: 'Montserrat', sans-serif; font-size: 80px; font-weight: 900; line-height: 0.82; margin-bottom: 30px; letter-spacing: -4px; color: #1a1a1a; }
+    .line-wrapper { overflow: hidden; }
+    .outlined { color: transparent !important; -webkit-text-stroke: 2px #1a1a1a; display: inline-block; }
+    .top-tag { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: #bbb; letter-spacing: 5px; margin-bottom: 15px; }
+    .method-text { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: #666; margin: 5px 0; }
+
+    .luxury-form { display: flex; flex-direction: column; gap: 10px; margin-top: 25px; }
+    .luxury-form input, .luxury-form textarea {
+        border: none; border-bottom: 1.5px solid #eee; padding: 12px 0;
+        font-family: 'Montserrat', sans-serif; font-size: 13px; outline: none; transition: 0.3s; background: transparent;
+    }
+    .luxury-form input:focus, .luxury-form textarea:focus { border-bottom-color: #000; }
+    .send-btn {
+        margin-top: 20px; background: #000; color: #fff; border: none; padding: 15px 30px;
+        font-family: 'Montserrat', sans-serif; font-weight: 900; letter-spacing: 2px; cursor: pointer; align-self: flex-start;
+    }
+
+    .image-side { flex: 5.5; background: #f9f9f9; overflow: hidden; }
+    .image-side img { width: 70%; height: 50%; object-fit: cover; object-position: center 15%; display: block; }
+
+    .reveal-item { display: inline-block; opacity: 0; transform: translateY(100%); animation: revealUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: var(--delay); }
+    @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
+    .reveal-image { opacity: 0; animation: fadeIn 1.5s ease forwards; animation-delay: 0.4s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    @media (max-width: 900px) {
+        .split-container { flex-direction: column-reverse; }
+        .text-side { padding: 100px 20px; justify-content: center; flex: none; width: 100%; }
+        .image-side { height: 40vh; flex: none; width: 100%; }
+        .main-title { font-size: 50px; }
+    }
+</style>
+{{ end }}
