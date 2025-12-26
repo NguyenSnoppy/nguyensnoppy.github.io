@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Abouts on VÕ PHÚC NGUYÊN | Portfolio</title>
+    <link>http://localhost:1313/about/</link>
+    <description>Recent content in Abouts on VÕ PHÚC NGUYÊN | Portfolio</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>vi-vn</language>
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/about/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/about/</guid>
+      <description>&lt;h2 id=&#34;-giới-thiệu&#34;&gt;👋 Giới thiệu&lt;/h2&gt;
+&lt;p&gt;Mình là &lt;strong&gt;Võ Phúc Nguyên&lt;/strong&gt;, sinh viên Công nghệ Thông tin, định hướng phát triển theo &lt;strong&gt;Java Backend&lt;/strong&gt; và &lt;strong&gt;Network Engineering&lt;/strong&gt;.&lt;br&gt;
+Mình có niềm yêu thích với các hệ thống phía sau ứng dụng — nơi dữ liệu được xử lý, truyền tải và vận hành một cách ổn định.&lt;/p&gt;
+&lt;p&gt;Trong quá trình học tập, mình đã hoàn thành &lt;strong&gt;03 chứng chỉ Cisco&lt;/strong&gt;, giúp mình xây dựng nền tảng vững chắc về:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Contacts on VÕ PHÚC NGUYÊN | Portfolio</title>
+    <link>http://localhost:1313/contact/</link>
+    <description>Recent content in Contacts on VÕ PHÚC NGUYÊN | Portfolio</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Tue, 24 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/contact/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Liên hệ với mình</title>
+      <link>http://localhost:1313/contact/contact/</link>
+      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/contact/</guid>
+      <description>Thông tin liên hệ của Võ Phúc Nguyên</description>
+    </item>
+  </channel>
+</rss>
