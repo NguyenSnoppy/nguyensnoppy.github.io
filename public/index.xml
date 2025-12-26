@@ -9,20 +9,11 @@
     <lastBuildDate>Wed, 24 Dec 2025 17:24:15 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bai 1 Tong Quan Java</title>
+      <title>Java Genesis: Khởi Đầu Hành Trình Của Một Architect</title>
       <link>http://localhost:1313/posts/bai-1-tong-quan-java/</link>
       <pubDate>Wed, 24 Dec 2025 17:24:15 +0700</pubDate>
       <guid>http://localhost:1313/posts/bai-1-tong-quan-java/</guid>
-      <description>&lt;h2 id=&#34;1-java-là-gì&#34;&gt;1. Java là gì?&lt;/h2&gt;
-&lt;p&gt;Java là một ngôn ngữ lập trình hướng đối tượng (OOP) rất mạnh mẽ. Mình chọn Java vì nó có tính bảo mật cao và được dùng nhiều trong lập trình mạng.&lt;/p&gt;
-&lt;h2 id=&#34;2-tại-sao-nên-học-java&#34;&gt;2. Tại sao nên học Java?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Viết một lần, chạy mọi nơi (Write Once, Run Anywhere).&lt;/li&gt;
-&lt;li&gt;Cộng đồng hỗ trợ rất lớn.&lt;/li&gt;
-&lt;li&gt;Phù hợp để làm các ứng dụng Server-Side.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;3-cảm-nhận-cá-nhân&#34;&gt;3. Cảm nhận cá nhân&lt;/h2&gt;
-&lt;p&gt;Lúc đầu học mình thấy hơi khó vì cú pháp khắt khe, nhưng càng học càng thấy nó logic.&lt;/p&gt;</description>
+      <description>Khám phá lý do tại sao Java vẫn là &amp;ldquo;ngôn ngữ của những kiến trúc bền vững&amp;rdquo; trong kỷ nguyên số.</description>
     </item>
     <item>
       <title>Bai 2 Bien Trong Java</title>
