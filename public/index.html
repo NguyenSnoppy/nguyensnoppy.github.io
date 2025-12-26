@@ -41,25 +41,30 @@
         </nav>
     </header>
     <main>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <div class="full-screen-wrapper">
     <div class="split-container">
         
         <div class="text-side">
             <div class="content-box">
-                
+                <p class="top-tag reveal-item" style="--delay: 0.1s">VÕ PHÚC NGUYÊN // ARCHITECT OF CODE</p>
                 <h1 class="main-title">
-                    <div class="line-wrapper"><span class="reveal-item" style="--delay: 0.2s">BUILD</span></div>
-                    <div class="line-wrapper"><span class="reveal-item" style="--delay: 0.3s">QUIETLY.</span></div>
-                    <div class="line-wrapper"><span class="reveal-item outlined" style="--delay: 0.4s">SHIP</span></div>
-                    <div class="line-wrapper"><span class="reveal-item outlined" style="--delay: 0.5s">CONFIDEN</span></div>
-                    <div class="line-wrapper"><span class="reveal-item outlined" style="--delay: 0.6s">TLY.</span></div>
+                    <div class="line-wrapper"><span class="reveal-item" style="--delay: 0.2s">CRAFTING</span></div>
+                    <div class="line-wrapper"><span class="reveal-item" style="--delay: 0.3s">THE SILENCE.</span></div>
+                    <div class="line-wrapper"><span class="reveal-item italic-outlined" style="--delay: 0.4s">DEFINING</span></div>
+                    <div class="line-wrapper"><span class="reveal-item italic-outlined" style="--delay: 0.5s">THE FUTURE.</span></div>
                 </h1>
+                
                 <div class="description-block reveal-item" style="--delay: 0.8s">
-                    <h3 class="job-title">Java&JavaScript</h3>
+                    <h3 class="job-title">JAVA & NETWORK ARCHITECTURE</h3>
                     <p class="bio">
-                        Sinh viên Công Nghệ Thông Tin tại <strong>HUTECH</strong>.<br>
-                        Mình xây dựng Blog này để chia trải nghiệm cá nhân về lập trình mạng.
+                        Hiện thân của sự giao thoa giữa <strong>Hệ thống thông tin</strong> và nghệ thuật lập trình tại <strong>HUTECH</strong>.<br>
+                        Nơi đây lưu giữ những bản thảo kỹ thuật và hành trình chinh phục những dòng mã không ngủ.
                     </p>
+                    <div class="action-footer">
+                        <a href="/about" class="luxury-link">XEM QUA PHẦN GIỚI THIỆU VỀ MÌNH MỘT XÍU NHÉ ↗</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,85 +80,114 @@
 
 <style>
      
-     
     footer, .footer, .nav, .logo-switches, #top-link { display: none !important; }
     
-     
     body, html { 
-        background: #fff !important; 
+        background: #fdfdfd !important; 
         margin: 0; 
         padding: 0; 
-        overflow: hidden !important;  
+        overflow: hidden !important;
+        font-family: 'Inter', sans-serif;
     }
 
-     
-    .full-screen-wrapper { width: 100vw; height: 100vh; background: #fff; }
+    .full-screen-wrapper { width: 100vw; height: 100vh; }
     .split-container { display: flex; height: 100%; width: 100%; }
     
      
     .text-side { 
-        flex: 4.5; 
+        flex: 1.1; 
         display: flex; 
         justify-content: flex-end; 
         align-items: center; 
-        padding-right: 80px; 
-        background: #fff;
+        padding-right: 100px; 
+        background: #fdfdfd;
     }
-    .content-box { max-width: 550px; width: 100%; }
+    .content-box { max-width: 650px; width: 100%; }
 
      
     .main-title { 
-        font-family: 'Montserrat', sans-serif !important; 
-        font-size: 85px; 
-        font-weight: 900; 
-        line-height: 0.82; 
-        margin: 0 0 40px 0; 
+        font-family: 'Cormorant Garamond', serif !important; 
+        font-size: 105px; 
+        font-weight: 300; 
+        line-height: 0.9; 
+        margin: 0 0 30px 0; 
         text-transform: uppercase; 
-        letter-spacing: -6px; 
-        color: #1a1a1a;
+        letter-spacing: -2px; 
+        color: #111;
     }
-    .line-wrapper { overflow: hidden; } 
-    .outlined { color: transparent !important; -webkit-text-stroke: 2px #1a1a1a; display: inline-block; }
+    .line-wrapper { overflow: hidden; margin-bottom: 5px; } 
+    
+    .italic-outlined { 
+        font-style: italic;
+        color: transparent !important; 
+        -webkit-text-stroke: 1px #111; 
+        font-weight: 300;
+    }
 
      
     .image-side { 
-        flex: 5.5; 
-        background: #f9f9f9; 
-        overflow: hidden; 
+        flex: 0.9; 
+        position: relative;
+        background: #111; 
     }
+    .image-inner { width: 100%; height: 100%; }
     .image-side img { 
-        width: 70%; 
-        height: 50%; 
+        width: 100%; 
+        height: 100%; 
         object-fit: cover; 
-        object-position: center 15%; 
-        display: block; 
+        filter: grayscale(100%) contrast(110%);  
+        transition: 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .image-side:hover img {
+        filter: grayscale(0%) contrast(100%);
+        transform: scale(1.05);
     }
 
      
-    .top-tag { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: #bbb; letter-spacing: 5px; margin-bottom: 20px; }
-    .description-block { border-left: 5px solid #1a1a1a; padding-left: 25px; margin-top: 35px; }
-    .job-title { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 900; color: #000; }
-    .bio { font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 1.6; color: #666; max-width: 400px; }
+    .top-tag { font-size: 10px; font-weight: 600; color: #999; letter-spacing: 6px; margin-bottom: 25px; }
+    .description-block { 
+        padding-left: 30px; 
+        position: relative;
+    }
+    .description-block::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 0; width: 1px; height: 100%;
+        background: linear-gradient(to bottom, #111, transparent);
+    }
+    .job-title { font-size: 13px; letter-spacing: 3px; font-weight: 600; color: #111; margin-bottom: 15px; }
+    .bio { font-size: 15px; line-height: 1.8; color: #555; max-width: 420px; font-weight: 300; }
+    
+    .luxury-link {
+        display: inline-block;
+        margin-top: 25px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #111;
+        border-bottom: 1px solid #111;
+        padding-bottom: 5px;
+        transition: 0.3s;
+    }
+    .luxury-link:hover { letter-spacing: 2px; opacity: 0.7; }
 
      
     .reveal-item { 
         display: inline-block; opacity: 0; transform: translateY(100%);
-        animation: revealUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        animation: revealUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
         animation-delay: var(--delay);
     }
     @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
     
-    .reveal-image { opacity: 0; animation: fadeIn 1.5s ease forwards; animation-delay: 0.4s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .reveal-image { clip-path: inset(0 0 0 100%); animation: imageReveal 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: 0.5s; }
+    @keyframes imageReveal { to { clip-path: inset(0 0 0 0); } }
 
      
     @media (max-width: 900px) {
-        body, html { overflow: auto !important; }  
         .split-container { flex-direction: column-reverse; }
-        .text-side { padding: 60px 20px; justify-content: center; flex: none; }
-        .image-side { height: 50vh; width: 100%; flex: none; }
-        .image-side img { width: 100%; height: 100%; object-position: center top; }
-        .main-title { font-size: 50px; }
+        .text-side { padding: 40px 20px; flex: none; justify-content: flex-start; }
+        .image-side { height: 45vh; flex: none; }
+        .main-title { font-size: 60px; }
     }
 </style>
 

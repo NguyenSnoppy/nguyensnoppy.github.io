@@ -132,5 +132,19 @@
 &lt;/ul&gt;
 &lt;p&gt;Cảm ơn thầy cô đã hướng dẫn mình hoàn thành học phần này.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Liên hệ</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Về tôi</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
