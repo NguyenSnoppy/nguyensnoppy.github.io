@@ -53,6 +53,6 @@ Blog này là nơi mình:
 
 ## 📷 Hình ảnh cá nhân
 <!-- TODO: Thêm ảnh đại diện tại đây -->
-<!-- Ví dụ:
-![Võ Phúc Nguyên](anhdaidien.jpg)
--->
+<!-- Ví dụ:-->
+[Võ Phúc Nguyên](avatar.jpg)
+

@@ -132,5 +132,22 @@
 &lt;/ul&gt;
 &lt;p&gt;Cảm ơn thầy cô đã hướng dẫn mình hoàn thành học phần này.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Liên hệ với mình</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>Thông tin liên hệ của Võ Phúc Nguyên</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h2 id=&#34;-giới-thiệu&#34;&gt;👋 Giới thiệu&lt;/h2&gt;
+&lt;p&gt;Mình là &lt;strong&gt;Võ Phúc Nguyên&lt;/strong&gt;, sinh viên Công nghệ Thông tin, định hướng phát triển theo &lt;strong&gt;Java Backend&lt;/strong&gt; và &lt;strong&gt;Network Engineering&lt;/strong&gt;.&lt;br&gt;
+Mình có niềm yêu thích với các hệ thống phía sau ứng dụng — nơi dữ liệu được xử lý, truyền tải và vận hành một cách ổn định.&lt;/p&gt;
+&lt;p&gt;Trong quá trình học tập, mình đã hoàn thành &lt;strong&gt;03 chứng chỉ Cisco&lt;/strong&gt;, giúp mình xây dựng nền tảng vững chắc về:&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
