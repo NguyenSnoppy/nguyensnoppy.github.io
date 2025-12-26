@@ -1,125 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="light">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-<title>Bai 6 Async Await Js | VÕ PHÚC NGUYÊN | Portfolio</title>
-<meta name="keywords" content="">
-<meta name="description" content="Nội dung chính
-Trong lập trình mạng, dữ liệu không phải lúc nào cũng có ngay lập tức. JavaScript giải quyết vấn đề này bằng:
-
-Promise: Lời hứa về một giá trị trong tương lai.
-Async/Await: Cú pháp giúp code bất đồng bộ trông giống như code tuần tự, dễ đọc hơn.
-
-Việc nắm vững kiến thức này giúp mình xử lý dữ liệu từ API hiệu quả mà không làm treo trình duyệt.">
-<meta name="author" content="Võ Phúc Nguyên">
-<link rel="canonical" href="http://localhost:1313/posts/bai-6-async-await-js/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fd5566c526ae48aadabd950798a2dc3568536401560eae5caac3765a42a9e7b5.css" integrity="sha256-/VVmxSauSKravZUHmKLcNWhTZAFWDq5cqsN2WkKp57U=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/bai-6-async-await-js/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    }
-
-</script>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 6 Async Await Js - VÕ PHÚC NGUYÊN | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="VÕ PHÚC NGUYÊN | Portfolio (Alt + H)">VÕ PHÚC NGUYÊN | Portfolio</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
+<body>
+
+    <header class="luxury-header">
+        <nav class="luxury-nav">
+            <div class="luxury-logo">
+                <a href="http://localhost:1313/">VÕ PHÚC NGUYÊN</a>
             </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="http://localhost:1313/" title="Trang chủ">
-                    <span>Trang chủ</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/about/" title="Giới thiệu">
-                    <span>Giới thiệu</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/posts/" title="Blog">
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/contact/" title="Liên hệ">
-                    <span>Liên hệ</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Danh sách bài viết lập trình</a></div>
-    <h1 class="post-title entry-hint-parent">
-      Bai 6 Async Await Js
-    </h1>
-    <div class="post-meta"><span title='2025-12-19 17:29:48 +0700 +07'>December 19, 2025</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Võ Phúc Nguyên</span>
-
-</div>
-  </header> <div class="toc">
-    <details >
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
-
-        <div class="inner"><ul>
+            <ul class="luxury-menu">
                 <li>
-                    <a href="#n%e1%bb%99i-dung-ch%c3%adnh" aria-label="Nội dung chính">Nội dung chính</a>
+                    <a href="http://localhost:1313/" 
+                       class="">TRANG CHỦ</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/about" 
+                       class="">GIỚI THIỆU</a>
+                </li>
+
+                <li>
+                    <a href="http://localhost:1313/posts" 
+                       class="active">BLOG</a>
+                </li>
+
+                <li>
+                    <a href="http://localhost:1313/contact" 
+                       class="">LIÊN HỆ</a>
                 </li>
             </ul>
+        </nav>
+    </header>
+    <main>
+<div class="article-wrapper">
+    <article class="main-article">
+        <header class="article-header">
+            <p class="article-meta">19 JANUARY 2025 — </p>
+            <h1 class="article-title">Bai 6 Async Await Js</h1>
+        </header>
+        
+        <div class="article-content">
+            <h2 id="nội-dung-chính">Nội dung chính</h2>
+<p>Trong lập trình mạng, dữ liệu không phải lúc nào cũng có ngay lập tức. JavaScript giải quyết vấn đề này bằng:</p>
+<ul>
+<li><strong>Promise:</strong> Lời hứa về một giá trị trong tương lai.</li>
+<li><strong>Async/Await:</strong> Cú pháp giúp code bất đồng bộ trông giống như code tuần tự, dễ đọc hơn.</li>
+</ul>
+<p>Việc nắm vững kiến thức này giúp mình xử lý dữ liệu từ API hiệu quả mà không làm treo trình duyệt.</p>
+  
         </div>
-    </details>
-</div>
-
-  <div class="post-content"><h2 id="nội-dung-chính">Nội dung chính<a hidden class="anchor" aria-hidden="true" href="#nội-dung-chính">#</a></h2>
+        <div class="article-content">
+            <h2 id="nội-dung-chính">Nội dung chính</h2>
 <p>Trong lập trình mạng, dữ liệu không phải lúc nào cũng có ngay lập tức. JavaScript giải quyết vấn đề này bằng:</p>
 <ul>
 <li><strong>Promise:</strong> Lời hứa về một giá trị trong tương lai.</li>
@@ -127,151 +66,44 @@ Việc nắm vững kiến thức này giúp mình xử lý dữ liệu từ API
 </ul>
 <p>Việc nắm vững kiến thức này giúp mình xử lý dữ liệu từ API hiệu quả mà không làm treo trình duyệt.</p>
 
+        </div>
 
-  </div>
+        <div class="post-navigation">
+            
+            <a class="nav-btn prev" href="http://localhost:1313/posts/bai-5-dom-trong-js/">
+                <span class="nav-label">← BÀI TRƯỚC</span>
+                
+            </a>
+            
 
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/bai-5-dom-trong-js/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Bai 5 Dom Trong Js</span>
-  </a>
-  <a class="next" href="http://localhost:1313/posts/bai-7-lap-trinh-mang-voi-java/">
-    <span class="title">Next »</span>
-    <br>
-    <span>Bai 7 Lap Trinh Mang Voi Java</span>
-  </a>
-</nav>
+            
+            <a class="nav-btn next" href="http://localhost:1313/posts/bai-7-lap-trinh-mang-voi-java/">
+                <span class="nav-label">BÀI TIẾP THEO →</span>
+                
+            </a>
+            
+        </div>
+        </article>
+</div>
+    </article>
+</div>
 
-  </footer>
-</article>
+<style>
+     
+     
+    .article-wrapper { margin-top: 120px; display: flex; justify-content: center; padding-bottom: 100px; }
+    .main-article { max-width: 800px; width: 90%; padding: 0 20px; }
+    .article-header { text-align: center; margin-bottom: 60px; }
+    .article-meta { color: #888; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
+    .article-title { font-size: 40px; font-weight: 900; line-height: 1.3; }
+    .article-content { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; font-size: 18px; line-height: 1.8; text-align: justify; }
+    .article-content h2, .article-content h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; margin-top: 40px; }
+    .article-content pre { background: #f4f4f4; padding: 20px; border-radius: 5px; overflow-x: auto; font-size: 14px; border: 1px solid #ddd; }
+    .article-content code { font-family: 'Courier New', monospace; color: #d63384; }
+    .article-content img { max-width: 100%; height: auto; display: block; margin: 30px auto; }
+</style>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">VÕ PHÚC NGUYÊN | Portfolio</a></span> · 
 
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
 </body>
-
 </html>
