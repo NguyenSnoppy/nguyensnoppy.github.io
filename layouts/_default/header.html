@@ -23,6 +23,11 @@
                 <a href="{{ "contact" | absURL }}" 
                    class="{{ if in .RelPermalink "contact" }}active{{ end }}">LIÊN HỆ</a>
             </li>
+
+             <li>
+                <a href="{{ "activities" | absURL }}" 
+                   class="{{ if in .RelPermalink "activities" }}active{{ end }}">HOẠT ĐỘNG</a>
+            </li>
         </ul>
     </nav>
 </header>

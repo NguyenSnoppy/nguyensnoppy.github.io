@@ -47,6 +47,12 @@ theme = "PaperMod"
         url = "/contact/"
         weight = 40
 
+    [[menu.main]]
+        identifier = "activities"
+        name = "Hoạt động"
+        url = "/activities/"
+        weight = 50
+
 [markup]
     [markup.goldmark]
         [markup.goldmark.renderer]

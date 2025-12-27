@@ -72,6 +72,13 @@
       <description>Một cái nhìn toàn diện và sâu sắc về cách kết nối sức mạnh tính toán của Java với sự linh hoạt của JavaScript để tạo nên một hệ sinh thái phần mềm hoàn chỉnh.</description>
     </item>
     <item>
+      <title>Hoạt động của mình</title>
+      <link>http://localhost:1313/activities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/activities/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Liên hệ</title>
       <link>http://localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
