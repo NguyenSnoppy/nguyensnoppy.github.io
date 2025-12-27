@@ -50,14 +50,20 @@
 
     <div class="luxury-split-layout">
         <div class="luxury-image-side">
-            <div class="luxury-img-frame image-anim">
-                <img src="/anh3.jpg" alt="VÕ PHÚC NGUYÊN" onerror="this.src='https://via.placeholder.com/500x700?text=Anh+3+Update'">
+            <div style="display: flex; flex-direction: column; width: 70%; max-width: 360px;">
+                <div class="luxury-img-frame image-anim">
+                    <img src="/anh3.jpg" alt="VÕ PHÚC NGUYÊN" onerror="this.src='https://via.placeholder.com/500x700?text=Võ+Phúc+Nguyên'">
+                    
+                </div>
+                <div class="img-caption reveal-anim" style="--d: 0.4s">
+                    <span class="caption-line"></span> VÕ PHÚC NGUYÊN — 2004
+                </div>
             </div>
         </div>
 
         <div class="luxury-text-side">
             <div class="luxury-content">
-                <p class="luxury-label reveal-anim" style="--d: 0.1s">KHỞI ĐẦU // 01</p>
+                <p class="luxury-label reveal-anim" style="--d: 0.1s">KHỞI ĐẦU</p>
                 <h1 class="luxury-main-title">
                     <div class="hider"><span class="reveal-anim" style="--d: 0.2s">BẢN THÂN</span></div>
                     <div class="hider"><span class="reveal-anim italic-outlined" style="--d: 0.3s">MÌNH LÀ.</span></div>
@@ -66,7 +72,9 @@
                 <div class="luxury-bio reveal-anim" style="--d: 0.5s">
                     <h3 class="luxury-job">VÕ PHÚC NGUYÊN — HUTECH IT STUDENT</h3>
                     <p>Trong kỷ nguyên số hóa, mình chọn định nghĩa bản thân qua những kiến trúc mạng bền vững và tư duy logic của Java.</p>
-                    <p>Với mình, lập trình không chỉ là công việc, đó là nghệ thuật của sự kết nối.</p>
+                    <p>Hiện đang là sinh viên năm 4 chuyên ngành Hệ thống thông tin tại <strong>HUTECH</strong>.</p>
+                    <p>Mình không chỉ học cách viết code, mà học cách xây dựng những nhịp cầu số thông qua <strong>Java Backend</strong> và hạ tầng <strong>Networking</strong>.</p>
+                    <p class="quote-text">"Với mình, lập trình không chỉ là công việc, đó là nghệ thuật của sự kết nối."</p>
                 </div>
 
                 <div class="luxury-action-box reveal-anim" style="--d: 0.8s">
@@ -85,11 +93,11 @@
                             <a href="https://www.credly.com/badges/633954fd-20b4-481a-9957-2d4e27d81f2e/public_url" target="_blank">VIEW →</a>
                         </div>
                         <div class="cert-item">
-                            <span>JAVASCRIPT ESSENTIALS 1 (JSE)</span>
+                            <span>JAVASCRIPT ESSENTIALS 1</span>
                             <a href="https://www.credly.com/badges/a0bd4625-32e7-484f-9dd9-ab4522299e5f/public_url" target="_blank">VIEW →</a>
                         </div>
                         <div class="cert-item">
-                            <span>JAVASCRIPT ESSENTIALS 2 (JSE)</span>
+                            <span>JAVASCRIPT ESSENTIALS 2</span>
                             <a href="https://www.credly.com/badges/93c0143f-d34e-489f-95a5-9c6bb0d8b552/public_url" target="_blank">VIEW →</a>
                         </div>
                     </div>
@@ -107,63 +115,67 @@
 </script>
 
 <style>
-     
-    .luxury-page-wrapper { width: 100vw; height: 100vh; background: #fdfdfd; overflow: hidden; padding-top: 80px; box-sizing: border-box; }
-    .luxury-split-layout { display: flex; height: 100%; width: 100%; flex-direction: row; }
-    .luxury-image-side { flex: 5; display: flex; justify-content: center; align-items: center; background: #fff; }
-    .luxury-img-frame { width: 80%; max-width: 450px; height: 65vh; border: 1px solid #eee; padding: 15px; background: #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.1); overflow: hidden; }
-    .luxury-img-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 1s ease; }
-    .luxury-text-side { flex: 5; display: flex; justify-content: flex-start; align-items: center; padding-left: 80px; }
-    .luxury-main-title { font-family: 'Cormorant Garamond', serif !important; font-size: 90px; font-weight: 300; line-height: 0.9; margin: 0 0 30px 0; text-transform: uppercase; color: #111; }
-    .italic-outlined { font-style: italic; color: transparent !important; -webkit-text-stroke: 1px #111; }
-    .luxury-bio h3 { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 600; color: #000; }
-    .luxury-bio p { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.8; color: #444; font-weight: 300; }
+    :root {
+        --bg-main: #f2f0ed;
+        --bg-side: #ebe8e2;
+        --text-dark: #1a1a1a;
+        --text-gray: #66625f;
+    }
+
+    .luxury-page-wrapper { width: 100vw; height: 100vh; background: var(--bg-main); overflow: hidden; padding-top: 64px; box-sizing: border-box; }
+    .luxury-split-layout { display: flex; height: 100%; width: 100%; }
+
+    .luxury-image-side { flex: 5; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--bg-side); position: relative; }
+    
+    .luxury-img-frame { width: 100%; height: 52vh; border: 1px solid rgba(0,0,0,0.05); padding: 12px; background: #fff; box-shadow: 20px 30px 60px rgba(0,0,0,0.05); position: relative; }
+    .luxury-img-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 1.2s ease; }
+    .img-tag { position: absolute; bottom: 20px; left: -40px; transform: rotate(-90deg); font-family: 'Inter'; font-size: 9px; letter-spacing: 3px; color: #a19d99; }
     
      
-    .luxury-action-box { margin-top: 40px; border: 1px solid #000; max-width: 500px; background: #fff; position: relative; }
-    .action-header { background: #000; color: #fff; font-size: 10px; letter-spacing: 3px; padding: 8px 15px; font-family: 'Inter', sans-serif; }
-    .action-buttons { display: flex; align-items: center; }
-    .action-link { flex: 1; text-align: center; padding: 15px; text-decoration: none !important; color: #000 !important; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px; transition: 0.3s; }
-    .action-link:hover { background: #f5f5f5; }
-    .divider { width: 1px; height: 30px; background: #eee; }
+    .img-caption { 
+        margin-top: 20px; 
+        font-family: 'Inter', sans-serif; 
+        font-size: 11px; 
+        letter-spacing: 2px; 
+        color: var(--text-dark); 
+        font-weight: 600; 
+        display: flex; 
+        align-items: center; 
+    }
+    .caption-line { width: 30px; height: 1px; background: var(--text-dark); margin-right: 15px; }
 
-     
-    .cert-container { 
-        max-height: 0; 
-        overflow: hidden; 
-        transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-        background: #f9f9f9;
-    }
-    .cert-container.active { 
-        max-height: 300px; 
-        border-top: 1px solid #000;
-        padding: 10px 0;
-    }
-    .cert-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 12px 20px;
-        font-family: 'Inter', sans-serif;
-        font-size: 11px;
-        letter-spacing: 1px;
-        border-bottom: 1px solid #eee;
-    }
-    .cert-item:last-child { border-bottom: none; }
-    .cert-item span { color: #555; font-weight: 600; }
-    .cert-item a { color: #000; text-decoration: none; font-weight: 700; transition: 0.3s; }
-    .cert-item a:hover { letter-spacing: 2px; }
+    .luxury-text-side { flex: 5; display: flex; justify-content: flex-start; align-items: center; padding-left: 15%; }
+    .luxury-content { max-width: 440px; width: 100%; }
+    .luxury-label { font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 3px; color: var(--text-gray); margin-bottom: 15px; }
+    .luxury-main-title { font-family: 'Cormorant Garamond', serif !important; font-size: 72px; font-weight: 300; line-height: 0.9; margin: 0 0 24px 0; text-transform: uppercase; color: var(--text-dark); }
+    .italic-outlined { font-style: italic; color: transparent !important; -webkit-text-stroke: 1px var(--text-dark); }
+    
+    .luxury-bio h3 { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: var(--text-dark); margin-bottom: 15px; letter-spacing: 1px; }
+    .luxury-bio p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.7; color: var(--text-gray); font-weight: 300; margin-bottom: 12px; }
+    .quote-text { font-style: italic; color: var(--text-dark) !important; font-weight: 400 !important; border-left: 2px solid #d1cdc7; padding-left: 15px; margin-top: 25px; font-size: 13.5px !important; }
+    
+    .luxury-action-box { margin-top: 35px; border: 1px solid var(--text-dark); max-width: 400px; background: #fff; }
+    .action-header { background: var(--text-dark); color: #fff; font-size: 8px; letter-spacing: 2px; padding: 8px 15px; font-family: 'Inter', sans-serif; }
+    .action-buttons { display: flex; }
+    .action-link { flex: 1; text-align: center; padding: 15px; text-decoration: none !important; color: var(--text-dark) !important; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 10px; transition: 0.3s; }
+    .action-link:hover { background: var(--bg-main); }
+    .divider { width: 1px; height: 25px; background: #eee; }
 
-     
+    .cert-container { max-height: 0; overflow: hidden; transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1); background: #fafafa; }
+    .cert-container.active { max-height: 300px; border-top: 1px solid var(--text-dark); }
+    .cert-item { display: flex; justify-content: space-between; padding: 12px 20px; font-family: 'Inter', sans-serif; font-size: 9px; border-bottom: 1px solid #eee; }
+    .cert-item a { color: var(--text-dark); font-weight: 700; text-decoration: none; }
+
     .hider { overflow: hidden; }
     .reveal-anim { display: block; transform: translateY(100%); animation: revealUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: var(--d); }
     @keyframes revealUp { to { transform: translateY(0); } }
 
+    @media (max-width: 1200px) { .luxury-text-side { padding-left: 10%; } }
     @media (max-width: 900px) {
         .luxury-split-layout { flex-direction: column; }
-        .luxury-page-wrapper { height: auto; padding-top: 60px; }
-        .luxury-image-side { height: 40vh; }
-        .luxury-text-side { padding: 40px 20px; }
-        .luxury-main-title { font-size: 50px; }
+        .luxury-image-side { height: auto; padding: 40px 0; }
+        .luxury-text-side { padding-left: 25px; padding-top: 40px; }
+        .luxury-main-title { font-size: 45px; }
     }
 </style>
 

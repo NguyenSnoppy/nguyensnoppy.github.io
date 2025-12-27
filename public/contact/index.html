@@ -45,9 +45,16 @@
         </nav>
     </header>
     <main>
-<div class="profile-contact-wrapper">
+<div class="profile-contact-wrapper bg-blog-style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <div class="bg-visuals">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="bg-grid-overlay"></div>
+    </div>
 
     <div class="fb-profile-container assemble-container">
         <div class="cover-photo piece-top">
@@ -107,105 +114,121 @@
 
 <style>
      
-    body { background: #f0f2f5 !important; overflow-x: hidden; }
-    .profile-contact-wrapper { padding-bottom: 50px; perspective: 1000px; }
+    :root {
+        --bg-color: #fcfcfc;
+        --card-bg: rgba(255, 255, 255, 0.85);  
+        --accent-blue: #1877f2;
+    }
+
+    body { background: var(--bg-color) !important; margin: 0; padding: 0; }
+
+     
+    .profile-contact-wrapper { 
+        padding-top: 50px;
+        padding-bottom: 80px; 
+        min-height: 100vh;
+        position: relative; 
+        overflow: hidden; 
+    }
+    .bg-visuals { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; animation: move 20s infinite alternate; }
+    .blob-1 { width: 450px; height: 450px; background: #dbeafe; top: -100px; right: -50px; }
+    .blob-2 { width: 400px; height: 400px; background: #fef3c7; bottom: 50px; left: -100px; }
+    .blob-3 { width: 300px; height: 300px; background: #fae8ff; top: 40%; left: 30%; }
+    .bg-grid-overlay {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background-image: radial-gradient(#e5e7eb 0.8px, transparent 0.8px);
+        background-size: 30px 30px; opacity: 0.2;
+    }
+    @keyframes move { from { transform: translate(0, 0); } to { transform: translate(30px, 40px); } }
 
     .fb-profile-container { 
         max-width: 1050px; 
         margin: 0 auto; 
-        background: #fff; 
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-        border-radius: 0 0 12px 12px;
+        background: var(--card-bg); 
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.05); 
+        border-radius: 12px;
         overflow: hidden;
+        position: relative;
+        z-index: 1;
+        border: 1px solid rgba(255, 255, 255, 0.8);
     }
 
      
-    
-     
-    .piece-top {
-        animation: assembleDown 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    }
+    .piece-top { animation: assembleDown 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
+    .piece-center { opacity: 0; animation: assembleFade 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; animation-delay: 0.4s; }
+    .piece-left { opacity: 0; animation: assembleRight 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; animation-delay: 0.7s; }
+    .piece-right { opacity: 0; animation: assembleLeft 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; animation-delay: 0.9s; }
+
+    @keyframes assembleDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes assembleFade { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes assembleRight { from { transform: translateX(-30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes assembleLeft { from { transform: translateX(30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 
      
-    .piece-center {
-        opacity: 0;
-        animation: assembleFade 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        animation-delay: 0.5s;
-    }
-
-     
-    .piece-left {
-        opacity: 0;
-        animation: assembleRight 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        animation-delay: 0.8s;
-    }
-
-     
-    .piece-right {
-        opacity: 0;
-        animation: assembleLeft 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        animation-delay: 1s;
-    }
-
-    @keyframes assembleDown {
-        from { transform: translateY(-100%); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes assembleFade {
-        from { transform: scale(0.8); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes assembleRight {
-        from { transform: translateX(-100px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-    }
-
-    @keyframes assembleLeft {
-        from { transform: translateX(100px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-    }
-
-     
-    .cover-photo { height: 200px; width: 100%; background: #ddd; }
+    .cover-photo { height: 220px; width: 100%; overflow: hidden; }
     .cover-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-    .profile-header-section { padding: 0 32px 20px; display: flex; align-items: flex-end; transform: translateY(-30px); border-bottom: 1px solid #ddd; background: white; }
-    .profile-avatar { width: 168px; height: 168px; border-radius: 50%; border: 4px solid #fff; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .profile-header-section { 
+        padding: 0 40px 20px; display: flex; align-items: flex-end; 
+        transform: translateY(-40px); background: transparent; 
+    }
+    .profile-avatar { 
+        width: 168px; height: 168px; border-radius: 50%; 
+        border: 4px solid #fff; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    }
 
-    .profile-info { margin-left: 20px; padding-bottom: 15px; }
-    .profile-name { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 800; color: #1c1e21; margin: 0; }
-    .verified-icon { color: #1877f2; font-size: 20px; vertical-align: middle; }
-    .profile-subtitle { font-family: 'Montserrat', sans-serif; color: #65676b; font-weight: 600; margin: 5px 0; }
+    .profile-info { margin-left: 20px; padding-bottom: 10px; }
+    .profile-name { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 800; color: #111; margin: 0; }
+    .verified-icon { color: var(--accent-blue); font-size: 20px; }
+    .profile-subtitle { font-family: 'Montserrat', sans-serif; color: #666; font-weight: 600; margin: 5px 0; }
 
-    .profile-content-grid { display: grid; grid-template-columns: 4fr 6fr; gap: 16px; padding: 16px; background: #f0f2f5; }
-    .luxury-card { background: #fff; border-radius: 8px; padding: 15px; margin-bottom: 16px; border: 1px solid #ddd; }
-    .card-title { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 15px; color: #1c1e21; }
+    .profile-content-grid { 
+        display: grid; grid-template-columns: 4fr 6fr; gap: 20px; 
+        padding: 0 25px 25px; background: transparent; 
+    }
+    .luxury-card { 
+        background: #fff; border-radius: 12px; padding: 20px; 
+        border: 1px solid rgba(0,0,0,0.05); 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .card-title { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 20px; color: #111; }
 
     .intro-list { list-style: none; padding: 0; }
-    .intro-list li { margin-bottom: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px; display: flex; align-items: center; }
-    .intro-list li i { width: 25px; color: #8c939d; font-size: 18px; margin-right: 10px; }
+    .intro-list li { margin-bottom: 15px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #444; }
+    .intro-list li i { width: 30px; color: #8c939d; font-size: 18px; }
 
-    .social-buttons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
-    .social-btn { padding: 10px; border-radius: 6px; text-decoration: none !important; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; color: white !important; transition: 0.3s; }
+    .social-buttons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+    .social-btn { 
+        padding: 12px; border-radius: 8px; text-decoration: none !important; 
+        text-align: center; font-family: 'Montserrat', sans-serif; 
+        font-weight: 700; font-size: 12px; color: white !important; transition: 0.3s; 
+    }
     .fb { background: #1877f2; }
     .gh { background: #24292e; }
     .mail { background: #ea4335; }
     .phone { background: #34a853; }
-    .social-btn:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .social-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
 
     .fb-style-form input, .fb-style-form textarea {
-        width: 100%; border: 1px solid #ddd; border-radius: 6px; padding: 12px; background: #f0f2f5; font-family: 'Montserrat', sans-serif; outline: none; box-sizing: border-box; margin-bottom: 10px;
+        width: 100%; border: 1px solid #eee; border-radius: 8px; 
+        padding: 14px; background: #f8f9fa; font-family: 'Montserrat', sans-serif; 
+        outline: none; box-sizing: border-box; margin-bottom: 12px;
     }
-    .fb-submit-btn { width: 100%; background: #1877f2; color: #fff; border: none; padding: 12px; border-radius: 6px; font-weight: 800; cursor: pointer; transition: 0.3s; }
-    .fb-submit-btn:hover { background: #166fe5; }
+    .fb-submit-btn { 
+        width: 100%; background: var(--accent-blue); color: #fff; 
+        border: none; padding: 14px; border-radius: 8px; 
+        font-weight: 800; cursor: pointer; transition: 0.3s; 
+    }
+    .fb-submit-btn:hover { background: #166fe5; transform: scale(1.01); }
 
     @media (max-width: 900px) {
         .profile-header-section { flex-direction: column; align-items: center; text-align: center; }
-        .profile-info { margin-left: 0; margin-top: 10px; }
+        .profile-info { margin-left: 0; margin-top: 15px; }
         .profile-content-grid { grid-template-columns: 1fr; }
-        .cover-photo { height: 200px; }
+        .cover-photo { height: 180px; }
+        .fb-profile-container { margin: 0 10px; }
     }
 </style>
 
