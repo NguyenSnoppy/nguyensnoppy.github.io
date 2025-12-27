@@ -1,77 +1,165 @@
 {{ define "main" }}
-<div class="full-screen-wrapper">
-    <div class="split-container">
-        <div class="text-side">
-            <div class="content-box">
-                <p class="top-tag reveal-item" style="--delay: 0.1s">GET IN TOUCH</p>
-                <h1 class="main-title">
-                    <div class="line-wrapper"><span class="reveal-item" style="--delay: 0.2s">CONTACT</span></div>
-                    <div class="line-wrapper"><span class="reveal-item outlined" style="--delay: 0.3s">ME.</span></div>
-                </h1>
+<div class="profile-contact-wrapper">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-                <div class="contact-methods reveal-item" style="--delay: 0.5s">
-                    <p class="method-text">📧 phucnguyenvo01@gmail.com</p>
-                    <p class="method-text">📞 +84 61 39 7704</p>
-                </div>
+    <div class="fb-profile-container assemble-container">
+        <div class="cover-photo piece-top">
+            <img src="https://images.unsplash.com/photo-1510511459019-5dee5926ff97?auto=format&fit=crop&q=80&w=1470" alt="Cover">
+        </div>
 
-                <div class="contact-form-container reveal-item" style="--delay: 0.7s">
-                    <form action="https://formspree.io/f/xvzpylgw" method="POST" class="luxury-form">
-                        <input type="text" name="name" placeholder="TÊN CỦA BẠN *" required>
-                        <input type="email" name="email" placeholder="EMAIL *" required>
-                        <textarea name="message" rows="3" placeholder="NỘI DUNG TIN NHẮN *" required></textarea>
-                        <button type="submit" class="send-btn">GỬI TIN NHẮN</button>
-                    </form>
-                </div>
+        <div class="profile-header-section piece-center">
+            <div class="avatar-container">
+                <img src="{{ "anh2.jpg" | absURL }}" alt="Võ Phúc Nguyên" class="profile-avatar">
+            </div>
+            <div class="profile-info">
+                <h1 class="profile-name">Võ Phúc Nguyên <i class="fas fa-check-circle verified-icon"></i></h1>
+                <p class="profile-subtitle">IT Student @ HUTECH | Java Backend Developer</p>
             </div>
         </div>
 
-        <div class="image-side">
-            <div class="image-inner reveal-image">
-                <img src="{{ "anh2.jpg" | absURL }}" alt="Võ Phúc Nguyên">
+        <div class="profile-content-grid">
+            <div class="profile-left-col piece-left">
+                <div class="luxury-card shadow-card">
+                    <h3 class="card-title">GIỚI THIỆU</h3>
+                    <ul class="intro-list">
+                        <li><i class="fas fa-briefcase"></i> Làm việc tại <strong>HUTECH</strong></li>
+                        <li><i class="fas fa-graduation-cap"></i> Học <strong>Kỹ thuật phần mềm</strong></li>
+                        <li><i class="fas fa-home"></i> Sống tại <strong>TP. Hồ Chí Minh</strong></li>
+                        <li><i class="fas fa-rss"></i> Có <strong>9 bài viết</strong> chuyên sâu</li>
+                    </ul>
+
+                    <div class="social-buttons-grid">
+                        <a href="https://www.facebook.com/nguyen.vu.713643" target="_blank" class="social-btn fb"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="https://github.com/NguyenSnoppy" target="_blank" class="social-btn gh"><i class="fab fa-github"></i> Github</a>
+                        <a href="mailto:phucnguyenvo01@gmail.com" class="social-btn mail"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="tel:+8461397704" class="social-btn phone"><i class="fas fa-phone"></i> Gọi ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-right-col piece-right">
+                <div class="luxury-card shadow-card">
+                    <h3 class="card-title">GỬI TIN NHẮN TRỰC TIẾP</h3>
+                    <form action="https://formspree.io/f/mykyejjq" method="POST" class="fb-style-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Họ và tên của bạn" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Địa chỉ Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="4" placeholder="Bạn đang nghĩ gì?" required></textarea>
+                        </div>
+                        <button type="submit" class="fb-submit-btn">ĐĂNG TIN NHẮN</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <style>
-    /* CSS Riêng cho trang Contact (đã bỏ Header style) */
-    footer, .footer, .nav, .header, .logo-switches, #top-link { display: none !important; }
-    body, html { background: #fff !important; margin: 0; padding: 0; overflow: hidden; }
+    /* Nền và Reset */
+    body { background: #f0f2f5 !important; overflow-x: hidden; }
+    .profile-contact-wrapper { padding-bottom: 50px; perspective: 1000px; }
 
-    .full-screen-wrapper { width: 100vw; height: 100vh; background: #fff; }
-    .split-container { display: flex; height: 100%; width: 100%; }
-    .text-side { flex: 4.5; display: flex; justify-content: flex-end; align-items: center; padding-right: 80px; background: #fff; }
-    .content-box { max-width: 500px; width: 100%; }
-    .main-title { font-family: 'Montserrat', sans-serif; font-size: 80px; font-weight: 900; line-height: 0.82; margin-bottom: 30px; letter-spacing: -4px; color: #1a1a1a; }
-    .line-wrapper { overflow: hidden; }
-    .outlined { color: transparent !important; -webkit-text-stroke: 2px #1a1a1a; display: inline-block; }
-    .top-tag { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: #bbb; letter-spacing: 5px; margin-bottom: 15px; }
-    .method-text { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: #666; margin: 5px 0; }
-
-    .luxury-form { display: flex; flex-direction: column; gap: 10px; margin-top: 25px; }
-    .luxury-form input, .luxury-form textarea {
-        border: none; border-bottom: 1.5px solid #eee; padding: 12px 0;
-        font-family: 'Montserrat', sans-serif; font-size: 13px; outline: none; transition: 0.3s; background: transparent;
-    }
-    .luxury-form input:focus, .luxury-form textarea:focus { border-bottom-color: #000; }
-    .send-btn {
-        margin-top: 20px; background: #000; color: #fff; border: none; padding: 15px 30px;
-        font-family: 'Montserrat', sans-serif; font-weight: 900; letter-spacing: 2px; cursor: pointer; align-self: flex-start;
+    .fb-profile-container { 
+        max-width: 1050px; 
+        margin: 0 auto; 
+        background: #fff; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        border-radius: 0 0 12px 12px;
+        overflow: hidden;
     }
 
-    .image-side { flex: 5.5; background: #f9f9f9; overflow: hidden; }
-    .image-side img { width: 70%; height: 50%; object-fit: cover; object-position: center 15%; display: block; }
+    /* --- HIỆU ỨNG LẮP GHÉP (ASSEMBLY ANIMATIONS) --- */
+    
+    /* Mảnh 1: Từ trên rơi xuống */
+    .piece-top {
+        animation: assembleDown 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
 
-    .reveal-item { display: inline-block; opacity: 0; transform: translateY(100%); animation: revealUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: var(--delay); }
-    @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
-    .reveal-image { opacity: 0; animation: fadeIn 1.5s ease forwards; animation-delay: 0.4s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    /* Mảnh 2: Hiện ra tại trung tâm */
+    .piece-center {
+        opacity: 0;
+        animation: assembleFade 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        animation-delay: 0.5s;
+    }
+
+    /* Mảnh 3: Từ trái bay sang */
+    .piece-left {
+        opacity: 0;
+        animation: assembleRight 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        animation-delay: 0.8s;
+    }
+
+    /* Mảnh 4: Từ phải bay sang */
+    .piece-right {
+        opacity: 0;
+        animation: assembleLeft 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        animation-delay: 1s;
+    }
+
+    @keyframes assembleDown {
+        from { transform: translateY(-100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes assembleFade {
+        from { transform: scale(0.8); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes assembleRight {
+        from { transform: translateX(-100px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes assembleLeft {
+        from { transform: translateX(100px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* --- GIỮ NGUYÊN STYLE FACEBOOK CỦA BẠN --- */
+    .cover-photo { height: 350px; width: 100%; background: #ddd; }
+    .cover-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .profile-header-section { padding: 0 32px 20px; display: flex; align-items: flex-end; transform: translateY(-30px); border-bottom: 1px solid #ddd; background: white; }
+    .profile-avatar { width: 168px; height: 168px; border-radius: 50%; border: 4px solid #fff; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+    .profile-info { margin-left: 20px; padding-bottom: 15px; }
+    .profile-name { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 800; color: #1c1e21; margin: 0; }
+    .verified-icon { color: #1877f2; font-size: 20px; vertical-align: middle; }
+    .profile-subtitle { font-family: 'Montserrat', sans-serif; color: #65676b; font-weight: 600; margin: 5px 0; }
+
+    .profile-content-grid { display: grid; grid-template-columns: 4fr 6fr; gap: 16px; padding: 16px; background: #f0f2f5; }
+    .luxury-card { background: #fff; border-radius: 8px; padding: 15px; margin-bottom: 16px; border: 1px solid #ddd; }
+    .card-title { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 15px; color: #1c1e21; }
+
+    .intro-list { list-style: none; padding: 0; }
+    .intro-list li { margin-bottom: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px; display: flex; align-items: center; }
+    .intro-list li i { width: 25px; color: #8c939d; font-size: 18px; margin-right: 10px; }
+
+    .social-buttons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+    .social-btn { padding: 10px; border-radius: 6px; text-decoration: none !important; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; color: white !important; transition: 0.3s; }
+    .fb { background: #1877f2; }
+    .gh { background: #24292e; }
+    .mail { background: #ea4335; }
+    .phone { background: #34a853; }
+    .social-btn:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+    .fb-style-form input, .fb-style-form textarea {
+        width: 100%; border: 1px solid #ddd; border-radius: 6px; padding: 12px; background: #f0f2f5; font-family: 'Montserrat', sans-serif; outline: none; box-sizing: border-box; margin-bottom: 10px;
+    }
+    .fb-submit-btn { width: 100%; background: #1877f2; color: #fff; border: none; padding: 12px; border-radius: 6px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+    .fb-submit-btn:hover { background: #166fe5; }
 
     @media (max-width: 900px) {
-        .split-container { flex-direction: column-reverse; }
-        .text-side { padding: 100px 20px; justify-content: center; flex: none; width: 100%; }
-        .image-side { height: 40vh; flex: none; width: 100%; }
-        .main-title { font-size: 50px; }
+        .profile-header-section { flex-direction: column; align-items: center; text-align: center; }
+        .profile-info { margin-left: 0; margin-top: 10px; }
+        .profile-content-grid { grid-template-columns: 1fr; }
+        .cover-photo { height: 200px; }
     }
 </style>
 {{ end }}
