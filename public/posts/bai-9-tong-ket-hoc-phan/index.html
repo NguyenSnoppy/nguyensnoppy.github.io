@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bai 9 Tong Ket Hoc Phan - VÕ PHÚC NGUYÊN | Portfolio</title>
+    <title>Full-stack Ecosystem: Kiến Trúc Hệ Thống Từ Backend Đến Frontend - VÕ PHÚC NGUYÊN | Portfolio</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -41,38 +41,80 @@
     </header>
     <main>
 <div class="article-wrapper">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <article class="main-article">
         <header class="article-header">
             <p class="article-meta">16 JANUARY 2025 — </p>
-            <h1 class="article-title">Bai 9 Tong Ket Hoc Phan</h1>
+            <h1 class="article-title">Full-stack Ecosystem: Kiến Trúc Hệ Thống Từ Backend Đến Frontend</h1>
         </header>
         
         <div class="article-content">
-            <h2 id="nội-dung-chính">Nội dung chính</h2>
-<p>Kết thúc đồ án này, mình đã học được cách kết hợp giữa tư duy lập trình hệ thống (Java) và tư duy làm giao diện (JS, Hugo).</p>
-<ul>
-<li><strong>Thành quả:</strong> Xây dựng thành công Blog cá nhân trên GitHub.</li>
-<li><strong>Định hướng:</strong> Tiếp tục nghiên cứu sâu về Java Spring Boot và các giao thức mạng nâng cao hơn.</li>
-</ul>
-<p>Cảm ơn thầy cô đã hướng dẫn mình hoàn thành học phần này.</p>
-  
-        </div>
-        <div class="article-content">
-            <h2 id="nội-dung-chính">Nội dung chính</h2>
-<p>Kết thúc đồ án này, mình đã học được cách kết hợp giữa tư duy lập trình hệ thống (Java) và tư duy làm giao diện (JS, Hugo).</p>
-<ul>
-<li><strong>Thành quả:</strong> Xây dựng thành công Blog cá nhân trên GitHub.</li>
-<li><strong>Định hướng:</strong> Tiếp tục nghiên cứu sâu về Java Spring Boot và các giao thức mạng nâng cao hơn.</li>
-</ul>
-<p>Cảm ơn thầy cô đã hướng dẫn mình hoàn thành học phần này.</p>
-
+            <p><img alt="System Architecture" loading="lazy" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1470">
+<em>Kiến trúc phần mềm hiện đại là sự giao thoa giữa nghệ thuật hiển thị và sức mạnh xử lý ngầm.</em></p>
+<hr>
+<h2 id="1-tư-duy-hệ-thống-tại-sao-lại-là-java--javascript">1. Tư Duy Hệ Thống: Tại Sao Lại Là Java &amp; JavaScript?</h2>
+<p>Trong kỷ nguyên Web 4.0, một kỹ sư phần mềm không chỉ đơn thuần là viết mã, mà là người kiến tạo các giải pháp giao tiếp giữa người và máy. Việc kết hợp Java và JavaScript không phải là ngẫu nhiên, mà đó là sự kết hợp giữa <strong>Sự ổn định (Stability)</strong> và <strong>Sự linh hoạt (Agility)</strong>.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Đặc tính</th>
+          <th style="text-align: left">Java (Backend)</th>
+          <th style="text-align: left">JavaScript (Frontend)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Vai trò</strong></td>
+          <td style="text-align: left">Xử lý logic, quản trị Database</td>
+          <td style="text-align: left">Hiển thị, tương tác người dùng</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Kiểu dữ liệu</strong></td>
+          <td style="text-align: left">Strong Typed (Chặt chẽ)</td>
+          <td style="text-align: left">Dynamic Typed (Linh hoạt)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hiệu năng</strong></td>
+          <td style="text-align: left">Cực cao với đa luồng</td>
+          <td style="text-align: left">Mượt mà với bất đồng bộ</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="2-java-backend-trái-tim-của-hệ-thống">2. Java Backend: Trái Tim Của Hệ Thống</h2>
+<p>Java đóng vai trò là &ldquo;bộ não&rdquo; xử lý mọi yêu cầu phức tạp. Ở bài học này, chúng ta tập trung vào việc tối ưu hóa cách Server phản hồi dữ liệu. Thay vì chỉ gửi tin nhắn đơn giản, chúng ta xây dựng cấu trúc xử lý đa luồng (Multi-threading) để đảm bảo hệ thống không bị nghẽn (Bottleneck).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Cấu trúc nâng cao cho một Server đa luồng xử lý nhiều kết nối cùng lúc</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HighPerformanceServer</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> IOException {
+</span></span><span style="display:flex;"><span>        ServerSocket serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServerSocket(8080);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hệ thống Backend đã sẵn sàng tại Port 8080...&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                Socket client <span style="color:#f92672">=</span> serverSocket.<span style="color:#a6e22e">accept</span>();
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Khởi tạo một tiến trình độc lập cho mỗi Client</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">new</span> Thread(() <span style="color:#f92672">-&gt;</span> handleRequest(client)).<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Lỗi kết nối: &#34;</span> <span style="color:#f92672">+</span> e.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleRequest</span>(Socket socket) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Logic xử lý dữ liệu chuyên sâu nằm ở đây</span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Đang phục vụ Client: &#34;</span> <span style="color:#f92672">+</span> socket.<span style="color:#a6e22e">getInetAddress</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  
         </div>
 
         <div class="post-navigation">
             
             <a class="nav-btn prev" href="http://localhost:1313/posts/bai-8-ung-dung-chat-don-gian/">
                 <span class="nav-label">← BÀI TRƯỚC</span>
-                
             </a>
             
 
@@ -80,24 +122,113 @@
             <div class="nav-placeholder"></div>
             
         </div>
-        </article>
-</div>
     </article>
 </div>
 
 <style>
      
-     
-    .article-wrapper { margin-top: 120px; display: flex; justify-content: center; padding-bottom: 100px; }
-    .main-article { max-width: 800px; width: 90%; padding: 0 20px; }
+    .article-wrapper { 
+        margin-top: 140px; 
+        display: flex; 
+        justify-content: center; 
+        padding-bottom: 100px; 
+        background: #fdfdfd;
+    }
+
+    .main-article { 
+        max-width: 750px;  
+        width: 90%; 
+    }
+
     .article-header { text-align: center; margin-bottom: 60px; }
-    .article-meta { color: #888; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
-    .article-title { font-size: 40px; font-weight: 900; line-height: 1.3; }
-    .article-content { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; font-size: 18px; line-height: 1.8; text-align: justify; }
-    .article-content h2, .article-content h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; margin-top: 40px; }
-    .article-content pre { background: #f4f4f4; padding: 20px; border-radius: 5px; overflow-x: auto; font-size: 14px; border: 1px solid #ddd; }
-    .article-content code { font-family: 'Courier New', monospace; color: #d63384; }
-    .article-content img { max-width: 100%; height: auto; display: block; margin: 30px auto; }
+
+    .article-meta { 
+        font-family: 'Inter', sans-serif;
+        color: #999; 
+        font-size: 11px; 
+        letter-spacing: 3px; 
+        text-transform: uppercase; 
+        margin-bottom: 20px; 
+    }
+
+    .article-title { 
+        font-family: 'Cormorant Garamond', serif !important;
+        font-size: 55px;  
+        font-weight: 300; 
+        line-height: 1.1; 
+        color: #111;
+        text-transform: uppercase;
+    }
+
+    .article-content { 
+        font-family: 'Inter', sans-serif; 
+        font-size: 18px;  
+        line-height: 1.8; 
+        color: #333; 
+        font-weight: 300;
+        text-align: justify; 
+    }
+
+    .article-content h2 { 
+        font-family: 'Cormorant Garamond', serif; 
+        font-size: 32px; 
+        font-weight: 600;
+        margin-top: 50px; 
+        color: #000;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    .article-content blockquote {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 24px;
+        border-left: 2px solid #000;
+        padding-left: 30px;
+        margin: 40px 0;
+        color: #555;
+    }
+
+    .article-content pre { 
+        background: #f9f9f9; 
+        padding: 25px; 
+        border-radius: 0; 
+        overflow-x: auto; 
+        font-size: 14px; 
+        border: 1px solid #eee; 
+        margin: 30px 0;
+    }
+
+    .article-content img { 
+        max-width: 100%; 
+        height: auto; 
+        display: block; 
+        margin: 40px auto; 
+        filter: grayscale(100%);
+        transition: 0.8s;
+    }
+    
+    .article-content img:hover { filter: grayscale(0%); }
+
+     
+    .post-navigation {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+    }
 </style>
 
     </main>

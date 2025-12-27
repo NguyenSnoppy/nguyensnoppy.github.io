@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bai 2 Bien Trong Java - VÕ PHÚC NGUYÊN | Portfolio</title>
+    <title>Java Variables: Những Viên Gạch Định Hình Dữ Liệu - VÕ PHÚC NGUYÊN | Portfolio</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -46,19 +46,38 @@
     <article class="main-article">
         <header class="article-header">
             <p class="article-meta">23 JANUARY 2025 — </p>
-            <h1 class="article-title">Bai 2 Bien Trong Java</h1>
+            <h1 class="article-title">Java Variables: Những Viên Gạch Định Hình Dữ Liệu</h1>
         </header>
         
         <div class="article-content">
-            <h2 id="nội-dung-chính">Nội dung chính</h2>
-<p>Trong Java, việc hiểu rõ kiểu dữ liệu là rất quan trọng vì đây là ngôn ngữ &ldquo;strong typed&rdquo;.</p>
+            <p><img alt="Ảnh biến và dữ liệu" loading="lazy" src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=1470">
+<em>Trong kiến trúc phần mềm, mỗi biến là một vùng không gian được định danh để lưu giữ giá trị của sự sáng tạo.</em></p>
+<hr>
+<h2 id="1-bản-chất-của-strong-typed">1. Bản Chất Của &ldquo;Strong Typed&rdquo;</h2>
+<p>Nếu bài trước chúng ta nói về Java như một hành trình, thì <strong>Biến (Variables)</strong> chính là những hành trang bạn mang theo. Java là một ngôn ngữ &ldquo;Strong Typed&rdquo; (kiểu dữ liệu mạnh), nghĩa là mọi thứ đều phải rõ ràng ngay từ đầu. Bạn không thể nhầm lẫn giữa một con số và một dòng chữ. Sự khắt khe này không phải là rào cản, mà là <strong>màng lọc an toàn</strong> cho những hệ thống lớn.</p>
+<h2 id="2-hệ-thống-kiểu-dữ-liệu-tuyển-chọn">2. Hệ Thống Kiểu Dữ Liệu Tuyển Chọn</h2>
+<p>Để quản lý dữ liệu hiệu quả, mình phân chia chúng thành các nhóm đặc thù:</p>
 <ul>
-<li><strong>Kiểu số nguyên:</strong> <code>int</code>, <code>long</code> dùng cho các số không có phần thập phân.</li>
-<li><strong>Kiểu số thực:</strong> <code>double</code>, <code>float</code> dùng cho các phép tính số dư, điểm số.</li>
-<li><strong>Kiểu chuỗi:</strong> <code>String</code> dùng để lưu trữ văn bản.</li>
-<li><strong>Kiểu logic:</strong> <code>boolean</code> chỉ nhận giá trị true hoặc false.</li>
+<li><strong>Nhóm Số Nguyên (<code>int</code>, <code>long</code>):</strong> Trụ cột cho các phép đếm, vòng lặp. Mình thường ưu tiên <code>int</code> cho các biến thông thường và <code>long</code> khi đối mặt với dữ liệu lớn của hệ thống mạng.</li>
+<li><strong>Nhóm Số Thực (<code>double</code>, <code>float</code>):</strong> Dành cho những phép tính đòi hỏi sự tinh tế và độ chính xác đến từng con số thập phân, như điểm số hay tọa độ.</li>
+<li><strong>Nhóm Chuỗi (<code>String</code>):</strong> Không chỉ là văn bản, <code>String</code> trong Java là một đối tượng mạnh mẽ giúp mình quản lý mọi thông tin định danh người dùng.</li>
+<li><strong>Nhóm Logic (<code>boolean</code>):</strong> Chỉ với <code>true</code> hoặc <code>false</code>, nhưng đây là &ldquo;công tắc&rdquo; điều khiển toàn bộ luồng logic của chương trình.</li>
 </ul>
-<p><strong>Kinh nghiệm:</strong> Mình thường dùng <code>int</code> cho các biến đếm và <code>String</code> để quản lý thông tin người dùng trong các bài tập trên lớp.</p>
+<p><img alt="Sắp xếp dữ liệu" loading="lazy" src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1470">
+<em>Sự ngăn nắp trong kiểu dữ liệu giúp mã nguồn trở nên minh bạch và dễ bảo trì.</em></p>
+<h2 id="3-kinh-nghiệm-thực-chiến-tư-duy-đúng--đủ">3. Kinh Nghiệm Thực Chiến: Tư Duy &ldquo;Đúng &amp; Đủ&rdquo;</h2>
+<p>Lúc mới bắt đầu bài tập tại <strong>HUTECH</strong>, mình hay mắc lỗi chọn sai kiểu dữ liệu dẫn đến tràn bộ nhớ hoặc mất dữ liệu. Sau này mình rút ra bài học:</p>
+<blockquote>
+<p>&ldquo;Chọn kiểu dữ liệu không chỉ là để chạy được, mà là để tối ưu không gian và thời gian.&rdquo;</p>
+</blockquote>
+<p>Ví dụ, khi làm quản lý thông tin sinh viên, việc kết hợp giữa <code>String</code> cho mã số và <code>boolean</code> cho trạng thái đăng ký giúp cấu trúc dữ liệu của mình rất sạch sẽ và chuyên nghiệp.</p>
+<hr>
+<h3 id="series-lập-trình-java">Series Lập trình Java</h3>
+<ul>
+<li>Bài trước: <a href="/posts/bai-1-tong-quan-java">Java Genesis - Khởi đầu hành trình</a></li>
+<li>Bài tiếp theo: <em>Đang cập nhật&hellip;</em></li>
+</ul>
+<hr>
   
         </div>
 

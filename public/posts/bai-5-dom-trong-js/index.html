@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bai 5 Dom Trong Js - VÕ PHÚC NGUYÊN | Portfolio</title>
+    <title>DOM Manipulation: Phù Thủy Điều Khiển Giao Diện - VÕ PHÚC NGUYÊN | Portfolio</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -41,66 +41,155 @@
     </header>
     <main>
 <div class="article-wrapper">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <article class="main-article">
         <header class="article-header">
             <p class="article-meta">20 JANUARY 2025 — </p>
-            <h1 class="article-title">Bai 5 Dom Trong Js</h1>
+            <h1 class="article-title">DOM Manipulation: Phù Thủy Điều Khiển Giao Diện</h1>
         </header>
         
         <div class="article-content">
-            <h2 id="nội-dung-chính">Nội dung chính</h2>
-<p>DOM (Document Object Model) là cầu nối giữa JS và HTML.</p>
+            <p><img alt="Code on Screen" loading="lazy" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1470">
+<em>DOM là cầu nối biến các mã lệnh khô khan thành những chuyển động tinh tế.</em></p>
+<hr>
+<h2 id="1-dom-là-gì">1. DOM Là Gì?</h2>
+<p><strong>DOM (Document Object Model)</strong> là một cấu trúc dạng cây đại diện cho toàn bộ trang web. Khi JavaScript &ldquo;chạm&rdquo; vào DOM, nó có thể thay đổi bất kỳ nội dung hoặc màu sắc nào mà không cần tải lại trang.</p>
+<h2 id="2-cách-mình-giao-tiếp-với-trang-web">2. Cách Mình &ldquo;Giao Tiếp&rdquo; Với Trang Web</h2>
+<p>Để điều khiển Blog, mình sử dụng các câu lệnh cơ bản nhưng quyền năng:</p>
 <ul>
-<li>Cách lấy phần tử: <code>document.querySelector()</code>.</li>
-<li>Lắng nghe sự kiện: <code>addEventListener('click', ...)</code>.</li>
+<li><strong>Lấy phần tử:</strong> <code>document.querySelector()</code> giúp mình nhắm chính xác vào thẻ HTML cần đổi.</li>
+<li><strong>Lắng nghe sự kiện:</strong> <code>addEventListener()</code> giúp trang web biết khi nào bạn nhấp chuột hoặc cuộn trang.</li>
 </ul>
-<p>Thông qua DOM, mình có thể tạo ra các nút bấm đổi màu nền hoặc hiện thông báo khi người dùng tương tác với Blog.</p>
-  
-        </div>
-        <div class="article-content">
-            <h2 id="nội-dung-chính">Nội dung chính</h2>
-<p>DOM (Document Object Model) là cầu nối giữa JS và HTML.</p>
-<ul>
-<li>Cách lấy phần tử: <code>document.querySelector()</code>.</li>
-<li>Lắng nghe sự kiện: <code>addEventListener('click', ...)</code>.</li>
-</ul>
-<p>Thông qua DOM, mình có thể tạo ra các nút bấm đổi màu nền hoặc hiện thông báo khi người dùng tương tác với Blog.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Thay đổi tiêu đề khi người dùng click
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.article-title&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;#d63384&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Cảm ơn bạn đã đọc bài viết!&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div>  
         </div>
 
         <div class="post-navigation">
             
             <a class="nav-btn prev" href="http://localhost:1313/posts/bai-4-javascript-co-ban/">
                 <span class="nav-label">← BÀI TRƯỚC</span>
-                
             </a>
             
 
             
             <a class="nav-btn next" href="http://localhost:1313/posts/bai-6-async-await-js/">
                 <span class="nav-label">BÀI TIẾP THEO →</span>
-                
             </a>
             
         </div>
-        </article>
-</div>
     </article>
 </div>
 
 <style>
      
-     
-    .article-wrapper { margin-top: 120px; display: flex; justify-content: center; padding-bottom: 100px; }
-    .main-article { max-width: 800px; width: 90%; padding: 0 20px; }
+    .article-wrapper { 
+        margin-top: 140px; 
+        display: flex; 
+        justify-content: center; 
+        padding-bottom: 100px; 
+        background: #fdfdfd;
+    }
+
+    .main-article { 
+        max-width: 750px;  
+        width: 90%; 
+    }
+
     .article-header { text-align: center; margin-bottom: 60px; }
-    .article-meta { color: #888; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
-    .article-title { font-size: 40px; font-weight: 900; line-height: 1.3; }
-    .article-content { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; font-size: 18px; line-height: 1.8; text-align: justify; }
-    .article-content h2, .article-content h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; margin-top: 40px; }
-    .article-content pre { background: #f4f4f4; padding: 20px; border-radius: 5px; overflow-x: auto; font-size: 14px; border: 1px solid #ddd; }
-    .article-content code { font-family: 'Courier New', monospace; color: #d63384; }
-    .article-content img { max-width: 100%; height: auto; display: block; margin: 30px auto; }
+
+    .article-meta { 
+        font-family: 'Inter', sans-serif;
+        color: #999; 
+        font-size: 11px; 
+        letter-spacing: 3px; 
+        text-transform: uppercase; 
+        margin-bottom: 20px; 
+    }
+
+    .article-title { 
+        font-family: 'Cormorant Garamond', serif !important;
+        font-size: 55px;  
+        font-weight: 300; 
+        line-height: 1.1; 
+        color: #111;
+        text-transform: uppercase;
+    }
+
+    .article-content { 
+        font-family: 'Inter', sans-serif; 
+        font-size: 18px;  
+        line-height: 1.8; 
+        color: #333; 
+        font-weight: 300;
+        text-align: justify; 
+    }
+
+    .article-content h2 { 
+        font-family: 'Cormorant Garamond', serif; 
+        font-size: 32px; 
+        font-weight: 600;
+        margin-top: 50px; 
+        color: #000;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    .article-content blockquote {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 24px;
+        border-left: 2px solid #000;
+        padding-left: 30px;
+        margin: 40px 0;
+        color: #555;
+    }
+
+    .article-content pre { 
+        background: #f9f9f9; 
+        padding: 25px; 
+        border-radius: 0; 
+        overflow-x: auto; 
+        font-size: 14px; 
+        border: 1px solid #eee; 
+        margin: 30px 0;
+    }
+
+    .article-content img { 
+        max-width: 100%; 
+        height: auto; 
+        display: block; 
+        margin: 40px auto; 
+        filter: grayscale(100%);
+        transition: 0.8s;
+    }
+    
+    .article-content img:hover { filter: grayscale(0%); }
+
+     
+    .post-navigation {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+    }
 </style>
 
     </main>

@@ -20,15 +20,32 @@
                 <div class="luxury-bio reveal-anim" style="--d: 0.5s">
                     <h3 class="luxury-job">VÕ PHÚC NGUYÊN — HUTECH IT STUDENT</h3>
                     <p>Trong kỷ nguyên số hóa, mình chọn định nghĩa bản thân qua những kiến trúc mạng bền vững và tư duy logic của Java.</p>
-                    <p>Với mình, lập trình không chỉ là công việc, đó là nghệ thuật của sự kết nối. Và khẳng định mình ở đâu trong thế giới này!</p>
+                    <p>Với mình, lập trình không chỉ là công việc, đó là nghệ thuật của sự kết nối.</p>
                 </div>
 
                 <div class="luxury-action-box reveal-anim" style="--d: 0.8s">
                     <div class="action-header">KHÁM PHÁ CHI TIẾT HƠN</div>
                     <div class="action-buttons">
-                        <a href="/posts" class="action-link">📖 TẠP CHÍ (BLOG)</a>
+                        <a href="/posts" class="action-link">📖 BLOG</a>
+                        <div class="divider"></div>
+                        <a href="javascript:void(0)" class="action-link" onclick="toggleCerts()">🏆 CHỨNG CHỈ</a>
                         <div class="divider"></div>
                         <a href="/contact" class="action-link">✉️ KẾT NỐI</a>
+                    </div>
+                    
+                    <div id="cert-list" class="cert-container">
+                        <div class="cert-item">
+                            <span>NETWORKING BASICS</span>
+                            <a href="https://www.credly.com/badges/633954fd-20b4-481a-9957-2d4e27d81f2e/public_url" target="_blank">VIEW →</a>
+                        </div>
+                        <div class="cert-item">
+                            <span>JAVASCRIPT ESSENTIALS 1 (JSE)</span>
+                            <a href="https://www.credly.com/badges/a0bd4625-32e7-484f-9dd9-ab4522299e5f/public_url" target="_blank">VIEW →</a>
+                        </div>
+                        <div class="cert-item">
+                            <span>JAVASCRIPT ESSENTIALS 2 (JSE)</span>
+                            <a href="https://www.credly.com/badges/93c0143f-d34e-489f-95a5-9c6bb0d8b552/public_url" target="_blank">VIEW →</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -36,164 +53,71 @@
     </div>
 </div>
 
+<script>
+    function toggleCerts() {
+        const list = document.getElementById('cert-list');
+        list.classList.toggle('active');
+    }
+</script>
+
 <style>
-    /* CSS TỔNG THỂ - NHÚNG TRỰC TIẾP */
-    .luxury-page-wrapper {
-        width: 100vw;
-        height: 100vh;
-        background: #fdfdfd;
-        overflow: hidden;
-        padding-top: 80px; /* Tránh bị menu che */
-        box-sizing: border-box;
-    }
+    /* ... Giữ nguyên các Style cũ của bạn ... */
+    .luxury-page-wrapper { width: 100vw; height: 100vh; background: #fdfdfd; overflow: hidden; padding-top: 80px; box-sizing: border-box; }
+    .luxury-split-layout { display: flex; height: 100%; width: 100%; flex-direction: row; }
+    .luxury-image-side { flex: 5; display: flex; justify-content: center; align-items: center; background: #fff; }
+    .luxury-img-frame { width: 80%; max-width: 450px; height: 65vh; border: 1px solid #eee; padding: 15px; background: #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.1); overflow: hidden; }
+    .luxury-img-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 1s ease; }
+    .luxury-text-side { flex: 5; display: flex; justify-content: flex-start; align-items: center; padding-left: 80px; }
+    .luxury-main-title { font-family: 'Cormorant Garamond', serif !important; font-size: 90px; font-weight: 300; line-height: 0.9; margin: 0 0 30px 0; text-transform: uppercase; color: #111; }
+    .italic-outlined { font-style: italic; color: transparent !important; -webkit-text-stroke: 1px #111; }
+    .luxury-bio h3 { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 600; color: #000; }
+    .luxury-bio p { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.8; color: #444; font-weight: 300; }
+    
+    /* STYLE CHO NÚT VÀ KHUNG CHỨNG CHỈ */
+    .luxury-action-box { margin-top: 40px; border: 1px solid #000; max-width: 500px; background: #fff; position: relative; }
+    .action-header { background: #000; color: #fff; font-size: 10px; letter-spacing: 3px; padding: 8px 15px; font-family: 'Inter', sans-serif; }
+    .action-buttons { display: flex; align-items: center; }
+    .action-link { flex: 1; text-align: center; padding: 15px; text-decoration: none !important; color: #000 !important; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px; transition: 0.3s; }
+    .action-link:hover { background: #f5f5f5; }
+    .divider { width: 1px; height: 30px; background: #eee; }
 
-    .luxury-split-layout {
+    /* DANH SÁCH CHỨNG CHỈ KHI XỔ XUỐNG */
+    .cert-container { 
+        max-height: 0; 
+        overflow: hidden; 
+        transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        background: #f9f9f9;
+    }
+    .cert-container.active { 
+        max-height: 300px; 
+        border-top: 1px solid #000;
+        padding: 10px 0;
+    }
+    .cert-item {
         display: flex;
-        height: 100%;
-        width: 100%;
-        flex-direction: row; /* Ảnh trái - Chữ phải */
-    }
-
-    /* PHẦN ẢNH: NHỎ GỌN NHƯ TRANG CHỦ */
-    .luxury-image-side {
-        flex: 5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #fff;
-    }
-
-    .luxury-img-frame {
-        width: 80%;
-        max-width: 450px;
-        height: 65vh;
-        border: 1px solid #eee;
-        padding: 15px;
-        background: #fff;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-        overflow: hidden;
-    }
-
-    .luxury-img-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: grayscale(100%);
-        transition: 1s ease;
-    }
-
-    .luxury-img-frame:hover img {
-        filter: grayscale(0%);
-        transform: scale(1.05);
-    }
-
-    /* PHẦN CHỮ: TĂNG SIZE 20% */
-    .luxury-text-side {
-        flex: 5;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding-left: 80px;
-    }
-
-    .luxury-content { max-width: 600px; }
-
-    .luxury-label {
+        justify-content: space-between;
+        padding: 12px 20px;
         font-family: 'Inter', sans-serif;
         font-size: 11px;
-        letter-spacing: 5px;
-        color: #999;
-        margin-bottom: 20px;
-        font-weight: 600;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #eee;
     }
-
-    .luxury-main-title {
-        font-family: 'Cormorant Garamond', serif !important;
-        font-size: 90px;
-        font-weight: 300;
-        line-height: 0.9;
-        margin: 0 0 30px 0;
-        text-transform: uppercase;
-        color: #111;
-    }
-
-    .italic-outlined {
-        font-style: italic;
-        color: transparent !important;
-        -webkit-text-stroke: 1px #111;
-    }
-
-    .luxury-bio h3 {
-        font-family: 'Inter', sans-serif;
-        font-size: 19px; /* Tăng 20% */
-        letter-spacing: 2px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        color: #000;
-    }
-
-    .luxury-bio p {
-        font-family: 'Inter', sans-serif;
-        font-size: 18px; /* Tăng 20% */
-        line-height: 1.8;
-        color: #444;
-        font-weight: 300;
-        margin-bottom: 20px;
-    }
-
-    /* KHUNG NÚT BẤM */
-    .luxury-action-box {
-        margin-top: 40px;
-        border: 1px solid #000;
-        max-width: 450px;
-    }
-
-    .action-header {
-        background: #000;
-        color: #fff;
-        font-size: 10px;
-        letter-spacing: 3px;
-        padding: 8px 15px;
-        font-family: 'Inter', sans-serif;
-    }
-
-    .action-buttons { display: flex; align-items: center; }
-
-    .action-link {
-        flex: 1;
-        text-align: center;
-        padding: 15px;
-        text-decoration: none !important;
-        color: #000 !important;
-        font-family: 'Inter', sans-serif;
-        font-weight: 600;
-        font-size: 13px;
-        transition: 0.3s;
-    }
-
-    .action-link:hover { background: #f5f5f5; }
-
-    .divider { width: 1px; height: 30px; background: #eee; }
+    .cert-item:last-child { border-bottom: none; }
+    .cert-item span { color: #555; font-weight: 600; }
+    .cert-item a { color: #000; text-decoration: none; font-weight: 700; transition: 0.3s; }
+    .cert-item a:hover { letter-spacing: 2px; }
 
     /* ANIMATIONS */
     .hider { overflow: hidden; }
-    .reveal-anim {
-        display: block;
-        transform: translateY(100%);
-        animation: revealUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-        animation-delay: var(--d);
-    }
-
-    @keyframes revealUp {
-        to { transform: translateY(0); }
-    }
+    .reveal-anim { display: block; transform: translateY(100%); animation: revealUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: var(--d); }
+    @keyframes revealUp { to { transform: translateY(0); } }
 
     @media (max-width: 900px) {
         .luxury-split-layout { flex-direction: column; }
-        .luxury-page-wrapper { height: auto; overflow: visible; }
+        .luxury-page-wrapper { height: auto; padding-top: 60px; }
+        .luxury-image-side { height: 40vh; }
         .luxury-text-side { padding: 40px 20px; }
-        .luxury-image-side { height: 50vh; }
-        .luxury-main-title { font-size: 60px; }
+        .luxury-main-title { font-size: 50px; }
     }
 </style>
 {{ end }}

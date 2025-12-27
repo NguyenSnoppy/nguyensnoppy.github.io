@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bai 7 Lap Trinh Mang Voi Java - VÕ PHÚC NGUYÊN | Portfolio</title>
+    <title>Java Networking: Kiên Trúc Kết Nối Trong Thế Giới Số - VÕ PHÚC NGUYÊN | Portfolio</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -41,68 +41,168 @@
     </header>
     <main>
 <div class="article-wrapper">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <article class="main-article">
         <header class="article-header">
             <p class="article-meta">18 JANUARY 2025 — </p>
-            <h1 class="article-title">Bai 7 Lap Trinh Mang Voi Java</h1>
+            <h1 class="article-title">Java Networking: Kiên Trúc Kết Nối Trong Thế Giới Số</h1>
         </header>
         
         <div class="article-content">
-            <h2 id="nội-dung-chính">Nội dung chính</h2>
-<p>Đây là phần cốt lõi của học phần. Java hỗ trợ lập trình mạng rất tốt thông qua gói <code>java.net</code>.</p>
+            <p><img alt="Networking Concept" loading="lazy" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1470">
+<em>Mạng máy tính không chỉ là những sợi cáp, đó là sự giao thoa của các luồng dữ liệu.</em></p>
+<hr>
+<h2 id="1-hệ-sinh-thái-javanet">1. Hệ Sinh Thái java.net</h2>
+<p>Java cung cấp một bộ công cụ cực kỳ mạnh mẽ để xử lý các tác vụ mạng thông qua gói <code>java.net</code>. Đây là nền tảng để xây dựng từ những ứng dụng đơn giản như gửi tin nhắn đến những hệ thống phân tán phức tạp.</p>
+<p>Để làm chủ lập trình mạng, chúng ta cần hiểu rõ 3 trụ cột:</p>
 <ul>
-<li><strong>IP Address:</strong> Định danh của máy tính trong mạng.</li>
-<li><strong>Port:</strong> Cổng dịch vụ (ví dụ: 80 cho web, 443 cho https).</li>
-<li><strong>TCP/IP:</strong> Giao thức truyền tin tin cậy.</li>
+<li><strong>IP Address (Định danh):</strong> Địa chỉ duy nhất của mỗi thiết bị trong mạng.</li>
+<li><strong>Port (Cổng dịch vụ):</strong> Các &ldquo;cánh cửa&rdquo; logic để phân loại dữ liệu (ví dụ: HTTP là cổng 80, HTTPS là 443).</li>
+<li><strong>Protocol (Giao thức):</strong> Quy tắc giao tiếp, trong đó TCP và UDP là hai nhân vật chính.</li>
 </ul>
-<p>Kiến thức này giúp mình hiểu cách các ứng dụng như Facebook hay Zalo truyền nhận tin nhắn.</p>
-  
-        </div>
-        <div class="article-content">
-            <h2 id="nội-dung-chính">Nội dung chính</h2>
-<p>Đây là phần cốt lõi của học phần. Java hỗ trợ lập trình mạng rất tốt thông qua gói <code>java.net</code>.</p>
-<ul>
-<li><strong>IP Address:</strong> Định danh của máy tính trong mạng.</li>
-<li><strong>Port:</strong> Cổng dịch vụ (ví dụ: 80 cho web, 443 cho https).</li>
-<li><strong>TCP/IP:</strong> Giao thức truyền tin tin cậy.</li>
-</ul>
-<p>Kiến thức này giúp mình hiểu cách các ứng dụng như Facebook hay Zalo truyền nhận tin nhắn.</p>
-
+<h2 id="2-giao-thức-tcpip-sự-tin-cậy-tuyệt-đối">2. Giao Thức TCP/IP: Sự Tin Cậy Tuyệt Đối</h2>
+<p>Trong các bài thực hành trên lớp, mình tập trung sâu vào <strong>TCP (Transmission Control Protocol)</strong>. Đây là giao thức hướng kết nối, đảm bảo dữ liệu gửi đi sẽ đến đích một cách toàn vẹn và đúng thứ tự.</p>
+<p><em>Cơ chế &ldquo;Bắt tay 3 bước&rdquo; giúp thiết lập một đường truyền an toàn trước khi dữ liệu chính thức được gửi đi.</em></p>
+<h2 id="3-quản-lý-địa-chỉ-ip-trong-java">3. Quản Lý Địa Chỉ IP Trong Java</h2>
+<p>Java giúp việc thao tác với địa chỉ IP trở nên đơn giản thông qua lớp <code>InetAddress</code>. Đây là bước đầu tiên để chương trình của bạn biết nó đang nói chuyện với ai.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.InetAddress;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NetworkInfo</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Lấy thông tin IP từ tên miền</span>
+</span></span><span style="display:flex;"><span>            InetAddress address <span style="color:#f92672">=</span> InetAddress.<span style="color:#a6e22e">getByName</span>(<span style="color:#e6db74">&#34;[www.google.com](https://www.google.com)&#34;</span>);
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Host Name: &#34;</span> <span style="color:#f92672">+</span> address.<span style="color:#a6e22e">getHostName</span>());
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;IP Address: &#34;</span> <span style="color:#f92672">+</span> address.<span style="color:#a6e22e">getHostAddress</span>());
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Không tìm thấy địa chỉ!&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>  
         </div>
 
         <div class="post-navigation">
             
             <a class="nav-btn prev" href="http://localhost:1313/posts/bai-6-async-await-js/">
                 <span class="nav-label">← BÀI TRƯỚC</span>
-                
             </a>
             
 
             
             <a class="nav-btn next" href="http://localhost:1313/posts/bai-8-ung-dung-chat-don-gian/">
                 <span class="nav-label">BÀI TIẾP THEO →</span>
-                
             </a>
             
         </div>
-        </article>
-</div>
     </article>
 </div>
 
 <style>
      
-     
-    .article-wrapper { margin-top: 120px; display: flex; justify-content: center; padding-bottom: 100px; }
-    .main-article { max-width: 800px; width: 90%; padding: 0 20px; }
+    .article-wrapper { 
+        margin-top: 140px; 
+        display: flex; 
+        justify-content: center; 
+        padding-bottom: 100px; 
+        background: #fdfdfd;
+    }
+
+    .main-article { 
+        max-width: 750px;  
+        width: 90%; 
+    }
+
     .article-header { text-align: center; margin-bottom: 60px; }
-    .article-meta { color: #888; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
-    .article-title { font-size: 40px; font-weight: 900; line-height: 1.3; }
-    .article-content { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; font-size: 18px; line-height: 1.8; text-align: justify; }
-    .article-content h2, .article-content h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; margin-top: 40px; }
-    .article-content pre { background: #f4f4f4; padding: 20px; border-radius: 5px; overflow-x: auto; font-size: 14px; border: 1px solid #ddd; }
-    .article-content code { font-family: 'Courier New', monospace; color: #d63384; }
-    .article-content img { max-width: 100%; height: auto; display: block; margin: 30px auto; }
+
+    .article-meta { 
+        font-family: 'Inter', sans-serif;
+        color: #999; 
+        font-size: 11px; 
+        letter-spacing: 3px; 
+        text-transform: uppercase; 
+        margin-bottom: 20px; 
+    }
+
+    .article-title { 
+        font-family: 'Cormorant Garamond', serif !important;
+        font-size: 55px;  
+        font-weight: 300; 
+        line-height: 1.1; 
+        color: #111;
+        text-transform: uppercase;
+    }
+
+    .article-content { 
+        font-family: 'Inter', sans-serif; 
+        font-size: 18px;  
+        line-height: 1.8; 
+        color: #333; 
+        font-weight: 300;
+        text-align: justify; 
+    }
+
+    .article-content h2 { 
+        font-family: 'Cormorant Garamond', serif; 
+        font-size: 32px; 
+        font-weight: 600;
+        margin-top: 50px; 
+        color: #000;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    .article-content blockquote {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 24px;
+        border-left: 2px solid #000;
+        padding-left: 30px;
+        margin: 40px 0;
+        color: #555;
+    }
+
+    .article-content pre { 
+        background: #f9f9f9; 
+        padding: 25px; 
+        border-radius: 0; 
+        overflow-x: auto; 
+        font-size: 14px; 
+        border: 1px solid #eee; 
+        margin: 30px 0;
+    }
+
+    .article-content img { 
+        max-width: 100%; 
+        height: auto; 
+        display: block; 
+        margin: 40px auto; 
+        filter: grayscale(100%);
+        transition: 0.8s;
+    }
+    
+    .article-content img:hover { filter: grayscale(0%); }
+
+     
+    .post-navigation {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+    }
 </style>
 
     </main>
