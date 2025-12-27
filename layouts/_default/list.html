@@ -1,7 +1,13 @@
 {{ define "main" }}
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-<div class="blog-list-page">
+<div class="blog-list-page canva-entrance"> <div class="bg-visuals">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="bg-grid-overlay"></div>
+    </div>
+    
     <div class="container">
         <h1 class="page-title">
             DANH SÁCH <br>
@@ -11,13 +17,19 @@
         <div class="lessons-grid">
             {{ range .Pages }}
             <article class="lesson-item">
-                <a href="{{ .Permalink }}">
-                    <span class="date-tag">{{ .Date.Format "02 . 01 . 2006" }}</span>
-                    <h2 class="lesson-name">{{ .Title }}</h2>
-                    <p class="lesson-desc">{{ .Summary | truncate 120 }}</p>
-                    <div class="lesson-footer">
-                        <span>KHÁM PHÁ</span>
-                        <span class="arrow">→</span>
+                <a href="{{ .Permalink }}" class="lesson-card-link">
+                    <div class="shimmer-overlay"></div> 
+                    
+                    <div class="lesson-card-content">
+                        <div class="card-header">
+                            <span class="date-tag">{{ .Date.Format "02 . 01 . 2006" }}</span>
+                            <div class="status-dot-pulse"></div> </div>
+                        <h2 class="lesson-name">{{ .Title }}</h2>
+                        <p class="lesson-desc">{{ .Summary | truncate 130 }}</p>
+                        <div class="lesson-footer">
+                            <span class="read-text">XEM CHI TIẾT</span>
+                            <span class="arrow-circle"><i class="fas fa-arrow-right"></i></span>
+                        </div>
                     </div>
                 </a>
             </article>
@@ -27,105 +39,132 @@
 </div>
 
 <style>
-    /* 1. XỬ LÝ KHOẢNG TRỐNG SÁT HEADER */
+    /* --- HIỆU ỨNG BUNG NỞ (CANVA ENTRANCE) --- */
+    .canva-entrance {
+        animation: canvaEntrance 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes canvaEntrance {
+        from { 
+            transform: scale(0.95) translateY(30px); 
+            opacity: 0; 
+            filter: blur(15px);
+        }
+        to { 
+            transform: scale(1) translateY(0); 
+            opacity: 1; 
+            filter: blur(0);
+        }
+    }
+
+    /* --- HIỆU ỨNG NHẤP NHÁY LƯỚT QUA (SHIMMER) --- */
+    .lesson-item {
+        position: relative;
+        overflow: hidden; /* Quan trọng để shimmer không tràn */
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .shimmer-overlay {
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            transparent 100%
+        );
+        transform: skewX(-25deg);
+        animation: shimmerSwipe 6s infinite; /* Lướt qua mỗi 6 giây */
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    @keyframes shimmerSwipe {
+        0% { left: -150%; }
+        20% { left: 150%; }
+        100% { left: 150%; }
+    }
+
+    /* Chấm trạng thái nhấp nháy nhẹ */
+    .status-dot-pulse {
+        width: 8px; height: 8px; 
+        background: #111; 
+        border-radius: 50%;
+        animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+        0% { box-shadow: 0 0 0 0 rgba(17, 17, 17, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(17, 17, 17, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(17, 17, 17, 0); }
+    }
+
+    /* --- GIỮ NGUYÊN CSS GỐC CỦA BẠN VÀ TỐI ƯU --- */
     .blog-list-page {
-        margin-top: 80px; /* Vừa đủ chiều cao Header của bạn */
-        padding-top: 20px; /* Đưa chữ "DANH SÁCH" sát lên trên */
-        padding-bottom: 80px;
+        margin-top: 80px;
+        padding-top: 60px;
+        padding-bottom: 100px;
         min-height: 100vh;
-        background: #fdfdfd;
+        background: #fcfcfc;
         display: flex;
         justify-content: center;
+        position: relative;
+        overflow: hidden;
     }
 
-    .container {
-        width: 90%;
-        max-width: 1200px;
+    .bg-visuals { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; animation: move 20s infinite alternate; }
+    .blob-1 { width: 500px; height: 500px; background: #dbeafe; top: -100px; right: -50px; animation-duration: 25s; }
+    .blob-2 { width: 400px; height: 400px; background: #fef3c7; bottom: 50px; left: -100px; animation-delay: -5s; }
+    .blob-3 { width: 300px; height: 300px; background: #fae8ff; top: 40%; left: 30%; animation-duration: 15s; }
+
+    .bg-grid-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: radial-gradient(#e5e7eb 0.8px, transparent 0.8px);
+        background-size: 30px 30px;
+        opacity: 0.2;
     }
 
-    /* 2. STYLE TIÊU ĐỀ LUXURY */
-    .page-title {
-        font-family: 'Cormorant Garamond', serif !important;
-        font-size: clamp(40px, 6vw, 75px);
-        font-weight: 300;
-        line-height: 0.85;
-        text-transform: uppercase;
-        margin-bottom: 50px;
-        color: #111;
+    @keyframes move {
+        from { transform: translate(0, 0) scale(1); }
+        to { transform: translate(50px, 100px) scale(1.1); }
     }
 
-    .outlined-text {
-        font-style: italic;
-        color: transparent !important;
-        -webkit-text-stroke: 1px #111;
-    }
+    .container { width: 90%; max-width: 1150px; position: relative; z-index: 1; }
+    .page-title { font-family: 'Cormorant Garamond', serif !important; font-size: clamp(45px, 7vw, 85px); font-weight: 300; line-height: 0.8; margin-bottom: 70px; color: #111; letter-spacing: -2px; }
+    .outlined-text { font-style: italic; color: transparent !important; -webkit-text-stroke: 1px #111; }
 
-    /* 3. GRID BÀI HỌC */
-    .lessons-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 40px;
-    }
+    .lessons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 35px; }
 
-    .lesson-item {
-        border-bottom: 1px solid #eee;
-        padding-bottom: 25px;
-        transition: 0.4s ease;
-    }
-
-    .lesson-item a {
-        text-decoration: none !important;
-        color: inherit !important;
-    }
+    .lesson-card-link { text-decoration: none !important; color: inherit !important; display: block; padding: 40px; position: relative; z-index: 2; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
 
     .lesson-item:hover {
-        border-color: #000;
-        transform: translateY(-5px);
+        background: #fff;
+        transform: translateY(-12px) scale(1.01);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+        border-color: #111;
     }
 
-    .date-tag {
-        font-family: 'Inter', sans-serif;
-        font-size: 10px;
-        letter-spacing: 2px;
-        color: #999;
-        display: block;
-        margin-bottom: 15px;
-    }
+    .date-tag { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2px; color: #888; font-weight: 600; }
+    .lesson-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; line-height: 1.1; margin-bottom: 18px; color: #111; }
+    .lesson-desc { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #555; font-weight: 300; margin-bottom: 35px; }
 
-    .lesson-name {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 26px;
-        font-weight: 600;
-        line-height: 1.2;
-        margin-bottom: 12px;
-    }
+    .lesson-footer { display: flex; justify-content: space-between; align-items: center; }
+    .read-text { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: #111; }
+    .arrow-circle { width: 40px; height: 40px; border: 1px solid #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
 
-    .lesson-desc {
-        font-family: 'Inter', sans-serif;
-        font-size: 14.5px;
-        line-height: 1.6;
-        color: #666;
-        font-weight: 300;
-        margin-bottom: 20px;
-    }
+    .lesson-item:hover .arrow-circle { background: #111; color: #fff; border-color: #111; transform: rotate(-45deg); }
 
-    .lesson-footer {
-        font-family: 'Inter', sans-serif;
-        font-size: 10px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .arrow { transition: 0.3s; }
-    .lesson-item:hover .arrow { transform: translateX(8px); }
-
-    /* MOBILE RESPONSIVE */
-    @media (max-width: 768px) {
-        .blog-list-page { margin-top: 60px; padding-top: 10px; }
-        .page-title { font-size: 45px; }
-    }
+    @media (max-width: 1024px) { .lessons-grid { grid-template-columns: 1fr; } .page-title { font-size: 60px; } }
+    @media (max-width: 768px) { .lesson-card-link { padding: 30px; } .lesson-name { font-size: 26px; } }
 </style>
 {{ end }}
